@@ -1,0 +1,33 @@
+<!--
+  Generated template for the ShowDocPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Confirme os dados</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-item>
+  
+  <ion-textarea [(ngModel)]="doc" name="doc" rows="30"></ion-textarea>
+</ion-item>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col>
+        <button ion-button clear full color="primary" icon-left (click)="confirm()">
+          <ion-icon name='checkmark-circle'></ion-icon>
+          Confirmar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

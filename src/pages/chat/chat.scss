@@ -1,0 +1,27 @@
+page-chat {
+    .user_name {
+        color: #fff;
+    }
+    .message {
+        padding: 10px !important;
+        transition: all 250ms ease-in-out !important;
+        border-radius: 10px !important;
+        margin-bottom: 14px !important;
+    }
+    .my_message {
+        background: color($colors, primary) !important;
+        color: #fff !important;
+    }
+    .other_message {
+        background: #EC7000 !important;
+        color: #fff !important;
+    }
+    .time {
+        color: #fff;
+        float: right;
+        font-size: small;
+    }
+    .message_row {
+        background-color: #fff;
+    }
+}
