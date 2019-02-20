@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <div class="bot">
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="text">Precisamos do seu endereço agora</p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="client">
+      <ion-row>
+        <ion-col col-2 text-left>
+          <img class="rounded-img2" src="assets/imgs/client.jpg" alt="itau logo">
+        </ion-col>
+        <ion-col col-3 text-center>
+          <h1 class="name2">{{nickname}}</h1>
+        </ion-col>
+      </ion-row>
+      <ion-item text-center>
+        <ion-label  floating>Digite o CEP ou endereço:</ion-label>
+        <ion-input type="text" [(ngModel)]="cep" text-center></ion-input>
+      </ion-item>
+
+      <ion-list>
+      
+        <ion-item>
+          <ion-label fixed>Logradouro: </ion-label>
+          <ion-input type="text" [(ngModel)]="endereco.logradouro"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label fixed>Número: </ion-label>
+        <ion-input type="text" [(ngModel)]="endereco.numero"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>Bairo: </ion-label>
+          <ion-input type="text" [(ngModel)]="endereco.bairro"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>Cidade: </ion-label>
+          <ion-input type="text" [(ngModel)]="endereco.localidade"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label fixed>UF: </ion-label>
+          <ion-input type="text" [(ngModel)]="endereco.uf"></ion-input>
+        </ion-item>
+
+        <ion-item>
+         <button ion-button full color="primary" (click)='searchCep()' [disabled]="!cep || cep.length != 8">Buscar endereço</button>
+        </ion-item>
+      
+      </ion-list>
+    </div>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button clear color="primary" (click)="confirmAddress()">
+          Confirmar Endereço <ion-icon name="md-arrow-forward"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,27 +1,100 @@
 page-nickname {
- .user_name {
-        color: #fff;
+
+    .header {
+         background-color: #EEEEEE !important;
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+        .toolbar{
+            .toolbar-background{
+                    background-color: #EEEEEE !important;
+                   
+                }
+        }
     }
-    .message {
-        padding: 10px !important;
-        transition: all 250ms ease-in-out !important;
-        border-radius: 10px !important;
-        margin-bottom: 4px !important;
+
+    .title {
+            padding: 0 60px 1px;
     }
-    .my_message {
-        background: color($colors, primary) !important;
-        color: #000 !important;
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+         border: none;
+
     }
-    .other_message {
-        background: #EC7000 !important;
-        color: #000 !important;
+
+    .back-button{
+        color: #EC7001;
+        margin-left: 10px;
+        margin-bottom: 5px;
     }
-    .time {
-        color: #fff;
-        float: right;
-        font-size: small;
+    ion-navbar, .toolbar, .toolbar-title{
+        
+        text-align: left !important;
+        background-color: #EEEEEE;
+        
     }
-    .message_row {
-        background-color: #fff;
+
+    hr{
+        width: 30%;
+        margin-top: 10px;
+            background-color: #cccccc !important;
+            height: 0.55px !important;
+            border-width: 0.55px !important;
+    }
+    col, .grid{
+        padding: 0;
+        height: 100%;
+    }
+
+    .bot{
+         background-color: #EEEEEE;
+         height: 45%;
+    }
+
+    .client{
+        padding-top: 10px;
+         background-color: #ffffff;
+         height: 55%;
+    }
+
+    .rounded-img{
+        border-radius: 50%;
+        width:100px;
+        border:1px solid #EC7001;
+    }
+
+    .name{
+        color:#EC7001;
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 0;
+        margin-bottom: -1rem;
+    }
+    .title{
+        color:#777777;
+        font-size: 12px;
+        margin-top: 0;
+        margin-bottom: -1rem;
+    }
+    .text{
+        color:#EC7001;
+        font-size: 16px;
+        margin-top: 0px;
+    }
+
+     .footer {
+        background-color: #EC7001 !important;
+        color: #ffffff;        
+        .toolbar{
+            .toolbar-background{
+                background-color: #EC7001 !important;
+                color: #ffffff; 
+            }
+        }
+        .button{
+            color: #ffffff;
+            opacity: 1;
+        }
+        .icon{
+            margin-left: 10px;
+        }
     }
 }

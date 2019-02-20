@@ -1,49 +1,146 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Itau - Abertura de conta
+      <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content  >
+<ion-content>
   <ion-grid>
-    <ion-row *ngFor="let message of messages">
+    <div class="bot">
+      <ion-row>
+        <ion-col text-center>
+          <img class="rounded-img" src="assets/imgs/chatbot.jpg" alt="itau logo">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h2 class="name">Itaú</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h3 class="title">Consultora de Contas</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <hr>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <p class="text">{{resposta}}</p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="client">
+      <ion-row>
+        <ion-col text-center>
+          <img class="rounded-img" src="assets/imgs/client.jpg" alt="itau logo">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h2 class="name">{{nickname}}</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dados.cpf">
+        <ion-col text-center>
+          <h3 class="title">{{dados.cpf}}</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dados.celular">
+        <ion-col text-center>
+          <h3 class="title">{{dados.celular}}</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dados.plano">
+        <ion-col text-center>
+          <h3 class="title">{{dados.plano}}</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="dados.endereco">
+        <ion-col text-center>
+          <h3 class="title">{{dados.endereco}}</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <hr>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item no-lines *ngIf="isPass">
+            <ion-input 
+              text-center 
+              type=password 
+              [disabled]="next"placeholder="Mensagem" 
+              [(ngModel)]="pergunta"
+            >
+          </ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="isCPF">
+            <ion-input 
+              text-center 
+              type=text
+              [disabled]="next" 
+              placeholder="CPF"
+              [(ngModel)]="pergunta" 
+              [brmasker]="{mask:'000.000.000-00', len:14}"
+            >
+            </ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="isFone">
+            <ion-input 
+              text-center 
+              type=text 
+              [disabled]="next" 
+              placeholder="Telefone" 
+              [(ngModel)]="pergunta"
+              
+            >
+            </ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="!isCPF && !isFone && !isPass && !isReal">
+            <ion-input 
+              text-center 
+              type=text 
+              [disabled]="next" 
+              placeholder="Mensagem" 
+              [(ngModel)]="pergunta"
+            >
+            </ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="isReal">
+            <ion-input 
+              text-center 
+              type=text 
+              [disabled]="next" 
+              placeholder="(R$) Real" 
+              [(ngModel)]="pergunta"
+              [brmasker]="{money: true, thousand: '.',  decimalCaracter: ',', decimal: '2'}"
+            >
+            </ion-input>
+          </ion-item>
+        </ion-col>
 
-      <ion-col col-9 *ngIf="message.from !== nickname" class="message"
-        [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
-        <span class="user_name">{{ message.from }}:</span><br>
-        <span>{{ message.text }}</span>
-        
-      </ion-col>
-
-      <ion-col offset-3 col-9 *ngIf="message.from === nickname" class="message"
-        [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
-        <span class="user_name">{{ message.from }}:</span><br>
-        <span>{{ message.text }}</span>
-        
-      </ion-col>
-
-    </ion-row>
+      </ion-row>
+    </div>
   </ion-grid>
 
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-row class="message_row">
-      <ion-col col-9>
-        <ion-item no-lines>
-          <ion-input type="text" placeholder="Mensagem" [(ngModel)]="msg"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col col-3>
-        <button ion-button clear color="primary" (click)="sendMessage()" [disabled]="msg === ''">
-          <ion-icon name="send"></ion-icon>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button clear color="primary" (click)="nextStep();sendMessage()">
+          {{this.passos[passoAtual]}} <ion-icon name="md-arrow-forward"></ion-icon>
         </button>
       </ion-col>
     </ion-row>
-    <button ion-button full (click)="sendSMS()">Send SMS</button>
-    <button ion-button full (click)="takePicture()">Take Picture</button>
   </ion-toolbar>
 </ion-footer>

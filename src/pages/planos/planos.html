@@ -1,0 +1,113 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <div class="bot">
+    
+      <ion-row>
+        <ion-col text-center>
+          <p class="text">Selecionamos planos especialmente para você</p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="client">
+      <ion-row>
+        <ion-col col-2 text-left>
+          <img class="rounded-img2" src="assets/imgs/client.jpg" alt="itau logo">
+        </ion-col>
+        <ion-col col-3 text-center>
+        <h1 class="name2">{{nickname}}</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <ion-slides>
+            <ion-slide>
+              <div class="plano">
+                  <h2>Plano Alpha</h2>
+                  <h3>R$30,00 / mês</h3>
+                  <ion-list no-lines>
+                    <ion-item>
+                      <span>10 </span>Transferências
+                    </ion-item>
+                    <ion-item>
+                      <span>10 </span>Saques
+                    </ion-item>
+                    <ion-item>
+                      <span>10 </span>Cheques
+                    </ion-item>
+                    <ion-item>
+                      saiba mais
+                    </ion-item>
+                    <ion-item>
+                     <button ion-button #planoAlpha value="planoAlpha" [ngClass]="{'choosen': plano == 'planoAlpha'}" (click)="chosePlano(planoAlpha)">eu  quero</button>
+                    </ion-item>
+                  </ion-list>
+              </div>
+            </ion-slide>
+            <ion-slide>
+              <div class="plano">
+                <h2>Plano Beta</h2>
+                <h3>R$20,00 / mês</h3>
+                <ion-list no-lines>
+                  <ion-item>
+                    <span>8 </span>Transferências
+                  </ion-item>
+                  <ion-item>
+                    <span>5 </span>Saques
+                  </ion-item>
+                  <ion-item>
+                    <span>8 </span>Cheques
+                  </ion-item>
+                  <ion-item>
+                    saiba mais
+                  </ion-item>
+                  <ion-item>
+                    <button ion-button #planoBeta value="planoBeta" [ngClass]="{'choosen': plano == 'planoBeta'}" (click)="chosePlano(planoBeta)">eu quero</button>
+                  </ion-item>
+                </ion-list>
+              </div>
+            </ion-slide>
+            <ion-slide>
+            <div class="plano">
+              <h2>Pacote Personalizado</h2>
+              <h3></h3>
+              <ion-list no-lines>
+                <ion-item>
+                  Escolha os itens do seu plano
+                </ion-item>
+                
+                <ion-item>
+                  saiba mais
+                </ion-item>
+                <ion-item>
+                    <button ion-button (click)="goToCustomPlane()">eu quero</button>
+                </ion-item>
+              </ion-list>
+            </div>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button clear color="primary" (click)="confirmPacote()">
+         Confirmar <ion-icon name="md-arrow-forward"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

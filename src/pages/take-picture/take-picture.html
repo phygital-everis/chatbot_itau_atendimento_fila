@@ -1,9 +1,37 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Tirar Foto</ion-title>
+    <ion-title>
+      <ion-row>
+        <ion-col col-2>
+          <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
+        </ion-col>
+        <ion-col col-10>
+          <p>Precisamos de um documento com foto</p>
+        </ion-col>
+      </ion-row>  
+    </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
+  <div class="menu">
+    <ion-row>
+      <ion-col text-center>
+        <h2>Selecione qual você gostaria de mandar</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button #rg value="RG" [ngClass]="{'choosen': tipoDoc == 'RG'}"(click)="choseType(rg)">RG</button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button #cnh value="CNH" [ngClass]="{'choosen': tipoDoc == 'CNH'}" (click)="choseType(cnh)">CNH</button>
+      </ion-col>
+      <ion-col text-center>
+        <button ion-button #rne value="RNE" [ngClass]="{'choosen': tipoDoc == 'RNE'}" (click)="choseType(rne)">RNE</button>
+      </ion-col>
+    </ion-row>
+    <hr>
+  </div>
   <ion-card>
     <img src="{{currentPhoto}}" />
   </ion-card>
@@ -12,7 +40,7 @@
   <ion-toolbar>
     <ion-row>
       <ion-col>
-        <button ion-button clear full color="primary" icon-left (click)="getPhoto('picture')">
+        <button ion-button clear full color="primary" icon-left (click)="getPhoto('picture')" [disabled]='!tipoDoc'>
           <ion-icon name='camera'></ion-icon>
           Tirar foto
         </button>

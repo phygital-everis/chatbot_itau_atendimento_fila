@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <div class="bot">
+
+      <ion-row>
+        <ion-col text-center>
+          <p class="text">Selecionamos planos especialmente para você</p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="client">
+      <ion-row>
+        <ion-col col-2 text-left>
+          <img class="rounded-img2" src="assets/imgs/client.jpg" alt="itau logo">
+        </ion-col>
+        <ion-col col-3 text-center>
+          <h1 class="name2">{{nickname}}</h1>
+        </ion-col>
+      </ion-row>
+     
+        <ion-list>
+          <ion-row>
+            <ion-col col-8 text-center>
+              <h4>Transferências: </h4>
+            </ion-col>
+            <ion-col col-4>
+              <span class="knob">{{transferencias}}</span>
+            </ion-col>
+          </ion-row>  
+          <ion-item>
+            <ion-range min="0" max="50" [(ngModel)]="transferencias">
+              <ion-label range-left>0</ion-label>
+              <ion-label range-right>50</ion-label>
+            </ion-range>
+          </ion-item>
+          <ion-row>
+            <ion-col col-8 text-center>
+              <h4>Saques: </h4>
+            </ion-col>
+            <ion-col col-4>
+              <span class="knob">{{saques}}</span>
+            </ion-col>
+          </ion-row>
+          <ion-item>
+            <ion-range min="0" max="50" [(ngModel)]="saques">
+              <ion-label range-left>0</ion-label>
+              <ion-label range-right>50</ion-label>
+            </ion-range>
+          </ion-item>
+          <ion-row>
+            <ion-col col-8 text-center>
+              <h4>Cheques: </h4>
+            </ion-col>
+            <ion-col col-4>
+              <span class="knob">{{cheques}}</span>
+            </ion-col>
+          </ion-row>
+          <ion-item>
+            <ion-range min="0" max="50" [(ngModel)]="cheques">
+              <ion-label range-left>0</ion-label>
+              <ion-label range-right>50</ion-label>
+            </ion-range>
+          </ion-item>
+        </ion-list>       
+    </div>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button clear color="primary" (click)="confirmPacote()">
+          Confirmar <ion-icon name="md-arrow-forward"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -3,7 +3,6 @@ import { NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { VisionProvider } from "../../providers/vision/vision";
 import { ShowDocPage } from "../../pages/show-doc/show-doc";
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'page-take-picture',
@@ -13,6 +12,8 @@ import { Observable } from 'rxjs';
 export class TakePicturePage {
 
   photo:any
+  tipoDoc:string
+
   constructor(
     private camera: Camera, 
     public navCtrl: NavController, 
@@ -34,12 +35,16 @@ export class TakePicturePage {
       this.photo = imageData;
       
       this.vision.sendVision(this.photo).subscribe((data)=>{
-        console.log(data)
-        this.navCtrl.push(ShowDocPage, { img: data });
+        
+        this.navCtrl.push(ShowDocPage, { data: data, tipo:this.tipoDoc });
       })
     }, (err) => {
       // Handle error
     });
+  }
+
+  choseType(el){
+    this.tipoDoc = el._elementRef.nativeElement.value    
   }
 
 }

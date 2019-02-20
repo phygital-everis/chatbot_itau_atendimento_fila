@@ -20,7 +20,7 @@ export class VisionProvider {
         },
         "features": [
           {
-            "type": "TEXT_DETECTION",
+            "type": "DOCUMENT_TEXT_DETECTION",
             "maxResults": 1
           }
         ]

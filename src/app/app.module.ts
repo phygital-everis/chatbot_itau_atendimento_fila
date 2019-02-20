@@ -6,6 +6,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { SMS } from '@ionic-native/sms';
 import { Sim } from '@ionic-native/sim';
+import { BrMaskerModule } from 'brmasker-ionic-3';
+import { IonicStorageModule } from '@ionic/storage';
+import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
+import { Camera } from '@ionic-native/camera';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -14,14 +18,17 @@ import { NicknamePage} from '../pages/nickname/nickname';
 import { TakePicturePage } from '../pages/take-picture/take-picture';
 import { ShowDocPage } from "../pages/show-doc/show-doc";
 import { SendSmsPage } from "../pages/send-sms/send-sms";
+import { PlanosPage } from '../pages/planos/planos';
+import { CustomPlanePage } from '../pages/custom-plane/custom-plane';
+import { AddressPage } from "../pages/address/address";
 
 import { VisionProvider } from '../providers/vision/vision';
-import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-import { Camera } from '@ionic-native/camera';
 import { LocalStorageProvider } from '../providers/local-storage/local-storage';
-import { IonicStorageModule } from '@ionic/storage';
 import { HttpEvaProvider } from '../providers/http-eva/http-eva';
 import { SendSmsProvider } from '../providers/send-sms/send-sms';
+import { WatsonapiProvider } from '../providers/watsonapi/watsonapi';
+import { BuscaCepProvider } from '../providers/busca-cep/busca-cep';
+
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
@@ -42,14 +49,26 @@ class CameraMock extends Camera {
     ChatPage,
     NicknamePage,
     ShowDocPage,
-    SendSmsPage
+    SendSmsPage,
+    PlanosPage,
+    CustomPlanePage,
+    AddressPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '',
+      backButtonIcon:'arrow-back',
+      iconMode: 'md',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+      tabsPlacement: 'bottom',
+      pageTransition: 'ios-transition'
+    }),
     HttpClientModule,
     SocketIoModule.forRoot(config),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    BrMaskerModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,7 +78,10 @@ class CameraMock extends Camera {
     ChatPage,
     NicknamePage,
     ShowDocPage,
-    SendSmsPage
+    SendSmsPage,
+    PlanosPage,
+    CustomPlanePage,
+    AddressPage
   ],
   providers: [
     StatusBar,
@@ -71,7 +93,9 @@ class CameraMock extends Camera {
     HttpEvaProvider,
     SMS,
     Sim,
-    SendSmsProvider
+    SendSmsProvider,
+    WatsonapiProvider,
+    BuscaCepProvider
   ]
 })
 export class AppModule {}

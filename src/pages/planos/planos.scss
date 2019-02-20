@@ -1,5 +1,5 @@
-page-chat {
-   .header {
+page-planos {
+  .header {
          background-color: #EEEEEE !important;
                     padding-top: 24px;
                     padding-bottom: 24px;
@@ -45,18 +45,24 @@ page-chat {
 
     .bot{
          background-color: #EEEEEE;
-         height: 45%;
+         height: 10%;
     }
 
     .client{
         padding-top: 10px;
          background-color: #ffffff;
-         height: 55%;
+         height: 90%;
     }
 
     .rounded-img{
         border-radius: 50%;
-        width:100px;
+        width:50px;
+        border:1px solid #EC7001;
+    }
+    .rounded-img2{
+        margin-left: 15px;
+        border-radius: 50%;
+        width:50px;
         border:1px solid #EC7001;
     }
 
@@ -67,6 +73,13 @@ page-chat {
         margin-top: 0;
         margin-bottom: -1rem;
     }
+     .name2{
+        color:#4A4A4A;
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+
     .title{
         color:#777777;
         font-size: 12px;
@@ -77,6 +90,30 @@ page-chat {
         color:#EC7001;
         font-size: 16px;
         margin-top: 0px;
+    }
+    .list, .item{
+         background-color: #F2F2F2 ;
+    }
+
+    .plano{
+        padding-top: 3px;
+        text-align: center;
+        background-color: #F2F2F2 ;
+        h2{
+            color:#EC7001;
+            font-size: 22px;
+        }
+        h3{
+            color: #23A520;
+            font-size: 26px;
+        }
+        .button{
+            width:100%;
+            background-color:#23A520;
+        }
+    }
+        .choosen{
+        background-color: #001E7C !important;
     }
 
      .footer {

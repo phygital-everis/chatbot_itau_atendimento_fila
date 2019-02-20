@@ -1,38 +1,82 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Itau - Abertura de conta
+      <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
-    <ion-row>
-      <ion-col col-9 class="message col other_message">
-        <span class="user_name">Chatbot:</span><br>
-        <span>Como você gostaria de ser chamado</span>
+    <div class="bot">
+      <ion-row>
+        <ion-col text-center>
+          <img class="rounded-img" src="assets/imgs/chatbot.jpg" alt="itau logo">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h2 class="name">Itaú</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h3 class="title">Consultora de Contas</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <hr>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <p class="text">{{pergunta}}</p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="client">
+      <ion-row>
+        <ion-col text-center>
+          <img class="rounded-img" src="assets/imgs/client.jpg" alt="itau logo">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h2 class="name">{{nickname}}</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h3 class="title">Nome ou apelido</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <hr>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item no-lines>
+            <ion-input text-center type="text" placeholder="Digite seu Nome" [(ngModel)]="nickname" minlength="3"></ion-input>
+          </ion-item>
+        </ion-col>
         
-      </ion-col>
-
-    </ion-row>
+      </ion-row>
+    </div>
   </ion-grid>
 
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-row class="message_row">
-      <ion-col col-9>
-        <ion-item no-lines>
-          <ion-input type="text" placeholder="Message" [(ngModel)]="nickname"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col col-3>
-        <button ion-button clear color="primary" (click)="joinChat()" [disabled]="nickname === ''">
-          <ion-icon name="send"></ion-icon>
-        </button>
-      </ion-col>
+    <ion-row>
+    <ion-col text-center>
+      <button ion-button clear color="primary" (click)="confirmNickname()" [disabled]="nickname === ''">
+        Agora o CPF <ion-icon name="md-arrow-forward"></ion-icon>
+      </button>
+    </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-footer>

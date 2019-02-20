@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+//import { ChatPage } from '../chat/chat';
 import { NicknamePage } from '../nickname/nickname';
 import { LocalStorageProvider } from "../../providers/local-storage/local-storage";
 

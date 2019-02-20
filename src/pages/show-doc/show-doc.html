@@ -15,9 +15,22 @@
 
 <ion-content padding>
 <ion-item>
-  
-  <ion-textarea [(ngModel)]="doc" name="doc" rows="30"></ion-textarea>
+  <ion-label>NOME:</ion-label>
+  <ion-input type='text' [(ngModel)]="dados.nome"></ion-input>
 </ion-item>
+<ion-item>
+  <ion-label>RG:</ion-label>
+  <ion-input type='text' [(ngModel)]="dados.rg"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>CPF:</ion-label>
+  <ion-input type='text' [(ngModel)]="dados.cpf"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>DATA NASC:</ion-label>
+  <ion-input type='text' [(ngModel)]="dados.nasc"></ion-input>
+</ion-item>
+
 </ion-content>
 <ion-footer>
   <ion-toolbar>

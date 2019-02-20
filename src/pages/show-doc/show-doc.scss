@@ -1,3 +1,47 @@
 page-show-doc {
  
+     .header {
+         background-color: #EEEEEE !important;
+                    padding-top: 24px;
+                    padding-bottom: 24px;
+        .toolbar{
+            .toolbar-background{
+                    background-color: #EEEEEE !important;
+                   
+                }
+        }
+    }
+
+    .title {
+            padding: 0 60px 1px;
+    }
+    .header-ios .toolbar-ios:last-child .toolbar-background-ios{
+         border: none;
+
+    }
+
+    .back-button{
+        display: none !important;
+        color: #EC7001;
+        margin-left: 10px;
+        margin-bottom: 5px;
+    }
+
+     .footer {
+        background-color: #EC7001 !important;
+        color: #ffffff;        
+        .toolbar{
+            .toolbar-background{
+                background-color: #EC7001 !important;
+                color: #ffffff; 
+            }
+        }
+        .button{
+            color: #ffffff;
+            opacity: 1;
+        }
+        .icon{
+            margin-left: 10px;
+        }
+    }
 }
