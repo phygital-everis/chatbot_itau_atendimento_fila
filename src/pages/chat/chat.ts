@@ -5,7 +5,7 @@ import { LocalStorageProvider } from "../../providers/local-storage/local-storag
 import { TakePicturePage } from "../take-picture/take-picture";
 import { PlanosPage } from "../planos/planos";
 import { AddressPage } from "../address/address";
-
+import { HomePage } from "../home/home";
 import { SendSmsPage } from "../send-sms/send-sms";
 
 @Component({
@@ -27,7 +27,7 @@ export class ChatPage {
   public resposta
   public next:boolean = false
   isPass:boolean = false
-  isCPF:boolean = true
+  isCPF:boolean = false
   isFone:boolean = false
   isReal:boolean = false
   dados = {
@@ -42,13 +42,14 @@ export class ChatPage {
       "message": ""
     }
   public passos = [
-    'Agora definir uma senha',
+    'Definir uma senha',
     'Um número para contato',
     'Confirmar número de contato',
     'Informar renda',
     'Escolher plano',
     'Enviar documento',
-    'Seu endereço'
+    'Enviar endereço',
+    'Retornar para Home'
   ]
   public passoAtual = 0
 
@@ -109,9 +110,11 @@ export class ChatPage {
 
  sendMessage() {
    console.log('Pergunta Enviada :' +this.pergunta);
+   console.log('Token Enviado :' + this.token);
    this.msgJson.message = this.pergunta
-   this.whatson.sendMsg(this.msgJson).subscribe((data)=>{
+   this.whatson.sendMsg(this.msgJson).subscribe((data)=>{     
      if (data && data!= 'undefined') {
+       console.log('resposta watson' + data.output.generic[0].text);
        this.resposta = data.output.generic[0].text
        this.evaluateResposta()
        this.saveMessages()
@@ -161,6 +164,12 @@ export class ChatPage {
       this.isCPF = false
       this.isPass = true 
     }
+    if (this.resposta.indexOf('CPF') > 0) {
+      this.isFone = false
+      this.isReal = false
+      this.isCPF = true
+      this.isPass = false
+    }
     if (this.resposta.indexOf('celular') > 0 ) {
       this.isFone = true 
       this.isReal = false
@@ -182,15 +191,10 @@ export class ChatPage {
     if (this.resposta.indexOf('renda') < 0) {
       this.isReal = false
     }
-
   }
 
   nextStep(){
-    console.log("input cpf = " + this.isCPF)
-    console.log("input real = " + this.isReal)
-    console.log("input fone = " + this.isFone)
-    console.log("input pass = " + this.isPass)
-    
+ 
     if (this.passoAtual == 0) {
       this.dados.cpf = this.pergunta
     }
@@ -206,6 +210,9 @@ export class ChatPage {
     }
     if (this.passoAtual == 6) {
       this.address()
+    }
+    if (this.passoAtual == 7) {
+      this.home()
     }
     this.passoAtual++
     console.log('Passo Atual :'+this.passoAtual);
@@ -231,6 +238,10 @@ export class ChatPage {
   address(){
     this.navCtrl.push(AddressPage)
   }
+
+  home() {
+    this.navCtrl.push(HomePage)
+  }  
 
   presentToast(msg) {
     const toast = this.toastCtrl.create({

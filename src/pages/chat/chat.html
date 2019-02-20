@@ -77,7 +77,7 @@
             <ion-input 
               text-center 
               type=password 
-              [disabled]="next"placeholder="Mensagem" 
+              laceholder="Senha" 
               [(ngModel)]="pergunta"
             >
           </ion-input>
@@ -86,7 +86,6 @@
             <ion-input 
               text-center 
               type=text
-              [disabled]="next" 
               placeholder="CPF"
               [(ngModel)]="pergunta" 
               [brmasker]="{mask:'000.000.000-00', len:14}"
@@ -97,31 +96,20 @@
             <ion-input 
               text-center 
               type=text 
-              [disabled]="next" 
               placeholder="Telefone" 
               [(ngModel)]="pergunta"
               
             >
             </ion-input>
           </ion-item>
-          <ion-item no-lines *ngIf="!isCPF && !isFone && !isPass && !isReal">
-            <ion-input 
-              text-center 
-              type=text 
-              [disabled]="next" 
-              placeholder="Mensagem" 
-              [(ngModel)]="pergunta"
-            >
-            </ion-input>
-          </ion-item>
+        
           <ion-item no-lines *ngIf="isReal">
             <ion-input 
               text-center 
               type=text 
-              [disabled]="next" 
               placeholder="(R$) Real" 
               [(ngModel)]="pergunta"
-              [brmasker]="{money: true, thousand: '.',  decimalCaracter: ',', decimal: '2'}"
+             
             >
             </ion-input>
           </ion-item>
