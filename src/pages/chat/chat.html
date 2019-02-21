@@ -12,7 +12,7 @@
       <ion-row>
         <ion-col text-center>
           <img class="rounded-img" src="assets/imgs/chatbot.jpg" alt="itau logo">
-          <button ion-button (click)="showRespostasHistory()">mostrar historico</button>
+          <ion-icon name="chatboxes" class="custom-icon" item-right (click)="presentModal('resposta')"></ion-icon>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -40,7 +40,7 @@
       <ion-row>
         <ion-col text-center>
           <img class="rounded-img" src="assets/imgs/client.jpg" alt="itau logo">
-          <button ion-button (click)="showPerguntasHistory()">mostrar historico</button>
+          <ion-icon name="menu" class="custom-icon" item-right (click)="presentModal('pergunta')"></ion-icon>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -76,6 +76,7 @@
       <ion-row>
         <ion-col>
           <ion-item no-lines *ngIf="isPass">
+            <ion-icon name="lock" item-left></ion-icon>
             <ion-input 
               text-center 
               type=password 
@@ -83,6 +84,7 @@
               [(ngModel)]="pergunta"
             >
           </ion-input>
+          <ion-icon name="eye-off" item-right></ion-icon>
           </ion-item>
           <ion-item no-lines *ngIf="isCPF">
             <ion-input 
@@ -95,6 +97,7 @@
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isFone">
+            <ion-icon name="phone-portrait" item-left></ion-icon>
             <ion-input 
               text-center 
               type=text 

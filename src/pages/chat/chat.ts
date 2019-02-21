@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController  } from 'ionic-angular';
+import { NavController, NavParams, ToastController, ModalController  } from 'ionic-angular';
 import { WatsonapiProvider } from "../../providers/watsonapi/watsonapi";
 import { LocalStorageProvider } from "../../providers/local-storage/local-storage";
 import { TakePicturePage } from "../take-picture/take-picture";
@@ -7,6 +7,7 @@ import { PlanosPage } from "../planos/planos";
 import { AddressPage } from "../address/address";
 import { HomePage } from "../home/home";
 import { SendSmsPage } from "../send-sms/send-sms";
+import { ModalHistoryPage } from '../modal-history/modal-history';
 
 @Component({
   selector: 'page-chat',
@@ -58,7 +59,8 @@ export class ChatPage {
     public navParams: NavParams,
     private whatson: WatsonapiProvider,
     private localStorage: LocalStorageProvider,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    public modalCtrl: ModalController
   ) {
     
     this.localStorage.getItems('nickname').then(
@@ -89,6 +91,20 @@ export class ChatPage {
       (data) => {
         if (data) {
           this.resposta = data
+        }
+      }
+    )
+    this.localStorage.getItems('perguntas').then(
+      (data) => {
+        if (data) {
+          this.perguntas = data
+        }
+      }
+    )
+    this.localStorage.getItems('respostas').then(
+      (data) => {
+        if (data) {
+          this.respostas = data
         }
       }
     )
@@ -244,15 +260,8 @@ export class ChatPage {
     toast.present()
   }
 
-  showPerguntasHistory(){
-    this.localStorage.getItems('perguntas').then(data=>{
-      console.log(data)      
-    })
-  }
-
-  showRespostasHistory() {
-    this.localStorage.getItems('respostas').then(data => {
-      console.log(data)
-    })
+  presentModal(tipo) {
+    const modal = this.modalCtrl.create(ModalHistoryPage,{tipo:tipo});
+    modal.present();
   }
 }

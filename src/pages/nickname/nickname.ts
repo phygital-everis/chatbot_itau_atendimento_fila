@@ -12,16 +12,17 @@ import { WatsonapiProvider } from "../../providers/watsonapi/watsonapi";
 })
 export class NicknamePage {
   nickname = '';
-  pergunta
+  
+  resposta
   token
-  msgJson = 
+  pergunta = 
     {
       "session_id": "", 
         "message" : "oi"
     }
-
+  public perguntas = new Array()
+  public respostas = new Array()  
   
-
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -35,7 +36,7 @@ export class NicknamePage {
     this.watson.initChat().subscribe(
       (response) => {        
         this.token = response.session_id
-        this.msgJson.session_id = this.token
+        this.pergunta.session_id = this.token
         this.localStorage.addItem('urlToken', this.token)
         this.firstMessage()
       }
@@ -43,13 +44,24 @@ export class NicknamePage {
   }
 
   firstMessage() {    
-    this.watson.sendMsg(this.msgJson).subscribe((data) => {
-     
-      this.pergunta = data.output.generic[0].text
+    this.watson.sendMsg(this.pergunta).subscribe((data) => {
+      this.resposta = data.output.generic[0].text
+      this.saveResposta()
     })
   }
 
   confirmNickname(){
+    this.savePergunta()
     this.navCtrl.push(ChatPage, { nickname: this.nickname })
+  }
+
+  savePergunta() {
+    this.perguntas.push(this.nickname)
+    this.localStorage.addItem('perguntas', this.perguntas)
+  }
+
+  saveResposta() {
+    this.respostas.push(this.resposta)
+    this.localStorage.addItem('respostas', this.respostas)
   }
 }

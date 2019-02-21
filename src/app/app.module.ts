@@ -21,6 +21,7 @@ import { SendSmsPage } from "../pages/send-sms/send-sms";
 import { PlanosPage } from '../pages/planos/planos';
 import { CustomPlanePage } from '../pages/custom-plane/custom-plane';
 import { AddressPage } from "../pages/address/address";
+import { ModalHistoryPage } from "../pages/modal-history/modal-history";
 
 import { VisionProvider } from '../providers/vision/vision';
 import { LocalStorageProvider } from '../providers/local-storage/local-storage';
@@ -43,7 +44,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     SendSmsPage,
     PlanosPage,
     CustomPlanePage,
-    AddressPage
+    AddressPage,
+    ModalHistoryPage
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     SendSmsPage,
     PlanosPage,
     CustomPlanePage,
-    AddressPage
+    AddressPage,
+    ModalHistoryPage
   ],
   providers: [
     StatusBar,
