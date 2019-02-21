@@ -80,11 +80,17 @@
             <ion-input 
               text-center 
               type=password 
-              laceholder="Senha" 
-              [(ngModel)]="pergunta"
-            >
-          </ion-input>
-          <ion-icon name="eye-off" item-right></ion-icon>
+              placeholder="Senha" 
+              [(ngModel)]="pergunta">
+            </ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="isToken">
+            <ion-input 
+              text-center 
+              type=password 
+              placeholder="Token" 
+              [(ngModel)]="pergunta">
+            </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isCPF">
             <ion-input 
@@ -107,12 +113,11 @@
             >
             </ion-input>
           </ion-item>
-        
           <ion-item no-lines *ngIf="isReal">
             <ion-input 
               text-center 
               type=text 
-              placeholder="(R$) Real" 
+              placeholder="(R$)" 
               [(ngModel)]="pergunta"
              
             >
@@ -126,7 +131,8 @@
 
 </ion-content>
 
-<ion-footer>
+<ion-footer [ngClass]= "pergunta || isPass == false && isToken == false 
+  && isFone == false && isReal == false && isCPF == false ? '' : 'hide-footer'">
   <ion-toolbar>
     <ion-row>
       <ion-col text-center>

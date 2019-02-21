@@ -40,7 +40,6 @@ page-chat {
     }
     col, .grid{
         padding: 0;
-        height: 100%;
     }
 
     .bot{
@@ -87,6 +86,10 @@ page-chat {
         font-size: 16px;
         margin-top: 0px;
     }
+     
+     .hide-footer {
+         display: none;
+     }
 
      .footer {
         background-color: #EC7001 !important;
