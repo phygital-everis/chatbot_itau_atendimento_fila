@@ -109,12 +109,9 @@ export class ChatPage {
   }
 
  sendMessage() {
-   console.log('Pergunta Enviada :' +this.pergunta);
-   console.log('Token Enviado :' + this.token);
    this.msgJson.message = this.pergunta
    this.whatson.sendMsg(this.msgJson).subscribe((data)=>{     
      if (data && data!= 'undefined') {
-       console.log('resposta watson' + data.output.generic[0].text);
        this.resposta = data.output.generic[0].text
        this.evaluateResposta()
        this.saveMessages()
@@ -150,7 +147,6 @@ export class ChatPage {
     if (this.resposta.indexOf('celular') > 0 && this.resposta.indexOf('não é válido') > 0) {
       this.passoAtual = 2
     }
-
     if (this.resposta.indexOf('senha') > 0 || this.resposta.indexOf('token') > 0) {
       this.isFone = false
       this.isReal = false
@@ -193,15 +189,13 @@ export class ChatPage {
     }
   }
 
-  nextStep(){
- 
+  nextStep(){ 
     if (this.passoAtual == 0) {
       this.dados.cpf = this.pergunta
     }
     if (this.passoAtual == 1) {
       this.isCPF = false
-    }
-  
+    }  
     if (this.passoAtual == 4) {
       this.planos()
     }
@@ -215,8 +209,6 @@ export class ChatPage {
       this.home()
     }
     this.passoAtual++
-    console.log('Passo Atual :'+this.passoAtual);
-    
     if (this.passoAtual>this.passos.length){
       this.passoAtual = this.passos.length
     }
@@ -250,5 +242,17 @@ export class ChatPage {
       position: 'top'
     });
     toast.present()
+  }
+
+  showPerguntasHistory(){
+    this.localStorage.getItems('perguntas').then(data=>{
+      console.log(data)      
+    })
+  }
+
+  showRespostasHistory() {
+    this.localStorage.getItems('respostas').then(data => {
+      console.log(data)
+    })
   }
 }
