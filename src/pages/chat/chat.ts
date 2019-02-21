@@ -27,6 +27,7 @@ export class ChatPage {
   public resposta
   public next:boolean = false
   isPass:boolean = false
+  isToken:boolean = false
   isCPF:boolean = false
   isFone:boolean = false
   isReal:boolean = false
@@ -151,36 +152,41 @@ export class ChatPage {
       this.passoAtual = 2
     }
 
-    if (this.resposta.indexOf('senha') > 0 || this.resposta.indexOf('token') > 0) {
+    if (this.resposta.indexOf('senha') > 0) {
       this.isFone = false
       this.isReal = false
       this.isCPF = false
-      this.isPass = true 
+      this.isPass = true
+      this.isToken = false
     }
     if (this.resposta.indexOf('token') > 0) {
       this.presentToast('Use esse token para validar o seu celular: 1234')
       this.isFone = false
       this.isReal = false
       this.isCPF = false
-      this.isPass = true 
+      this.isPass = false
+      this.isToken = true
     }
     if (this.resposta.indexOf('CPF') > 0) {
       this.isFone = false
       this.isReal = false
       this.isCPF = true
       this.isPass = false
+      this.isToken = false
     }
     if (this.resposta.indexOf('celular') > 0 ) {
       this.isFone = true 
       this.isReal = false
       this.isCPF = false 
-      this.isPass = false    
+      this.isPass = false
+      this.isToken = false
     }
     if (this.resposta.indexOf('renda') > 0) {
       this.isFone = false
       this.isReal = true
       this.isCPF = false
-      this.isPass = false 
+      this.isPass = false
+      this.isToken = false
     }
     if (this.resposta.indexOf('senha') < 0 && this.resposta.indexOf('token') < 0) {
       this.isPass = false 
