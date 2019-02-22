@@ -8,8 +8,8 @@
 
 <ion-content>
   <ion-grid>
+    
     <div class="bot">
-
       <ion-row>
         <ion-col text-center>
           <p class="text">Precisamos do seu endereço agora</p>
@@ -27,7 +27,7 @@
       </ion-row>
       <ion-item text-center>
         <ion-label  floating>Digite o CEP ou endereço:</ion-label>
-        <ion-input type="text" [(ngModel)]="cep" text-center></ion-input>
+        <ion-input type="text" autofocus [(ngModel)]="cep" text-center></ion-input>
       </ion-item>
 
       <ion-list>
@@ -38,8 +38,8 @@
         </ion-item>
 
         <ion-item>
-        <ion-label fixed>Número: </ion-label>
-        <ion-input type="text" [(ngModel)]="endereco.numero"></ion-input>
+          <ion-label fixed>Número: </ion-label>
+          <ion-input type="text" [(ngModel)]="endereco.numero"></ion-input>
         </ion-item>
 
         <ion-item>
@@ -58,7 +58,7 @@
         </ion-item>
 
         <ion-item>
-         <button ion-button full color="primary" (click)='searchCep()' [disabled]="!cep || cep.length != 8">Buscar endereço</button>
+          <button ion-button full class="background-search-button" (click)='searchCep()' [disabled]="!cep || cep.length != 8">Buscar endereço</button>
         </ion-item>
       
       </ion-list>
@@ -67,7 +67,7 @@
 
 </ion-content>
 
-<ion-footer>
+<ion-footer *ngIf="endereco.cep && endereco.numero">
   <ion-toolbar>
     <ion-row>
       <ion-col text-center>

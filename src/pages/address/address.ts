@@ -12,7 +12,6 @@ import { ChatPage } from "../chat/chat";
 export class AddressPage {
 
   nickname
-
   cep
 
   endereco = {
@@ -39,14 +38,11 @@ export class AddressPage {
 
   searchCep(){
     this.buscaCep.getAddress(this.cep).subscribe((address)=>{
-          this.endereco = address
-    })
+        this.endereco = address
+    });
   }
 
   confirmAddress(){
     this.navCtrl.push(ChatPage, { pergunta: 'endereco_confirmado' })
-
   }
-  
-
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, LoadingController, Loading } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { VisionProvider } from "../../providers/vision/vision";
 import { ShowDocPage } from "../../pages/show-doc/show-doc";
@@ -12,42 +12,30 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class TakePicturePage {
 
-  photo:any
+  photo:any = ''
   tipoDoc:string
+  loading
 
   constructor(
     private camera: Camera, 
     public navCtrl: NavController, 
     public navParams: NavParams,
     private vision:VisionProvider,
-    private loadingCtrl: LoadingController,
-    private domSanitizer: DomSanitizer )
-    { }
-
-  async presentLoading() {
-    const loading = await this.loadingCtrl.create({
-      spinner: null,
-      duration: 5000,
-      dismissOnPageChange: true,
-      cssClass: 'custom-class custom-loading'
-    });
-    await loading.present();
-    console.log('Loading dismissed!');
-  }
-
+    private _sanitizer: DomSanitizer)
+    {   
+    }
   getPhoto(){
-  const options: CameraOptions = {
-    quality: 100,
-    destinationType: this.camera.DestinationType.DATA_URL,
-    encodingType: this.camera.EncodingType.JPEG,
-    mediaType: this.camera.MediaType.PICTURE
-  }
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
 
     this.camera.getPicture(options).then((imageData) => {
-
-      console.log(imageData)
-      this.photo = this.domSanitizer.bypassSecurityTrustUrl(imageData);
-
+      this.photo = this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,' 
+      + imageData);
+      
       this.vision.sendVision(imageData).subscribe((data)=>{
         this.navCtrl.push(ShowDocPage, { data: data, tipo:this.tipoDoc });
       })
@@ -57,7 +45,7 @@ export class TakePicturePage {
   }
 
   choseType(el){
-    this.tipoDoc = el._elementRef.nativeElement.value    
+    this.tipoDoc = el._elementRef.nativeElement.value   
   }
 
 }

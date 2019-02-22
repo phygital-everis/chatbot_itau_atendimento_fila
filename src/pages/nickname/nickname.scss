@@ -11,7 +11,10 @@ page-nickname {
                 }
         }
     }
-
+    ion-input {
+        right: 0px!important;
+        position: absolute;
+    }
     .toolbar-ios ion-title {
             padding: 0 60px 1px;
     }
