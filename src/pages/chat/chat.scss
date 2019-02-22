@@ -1,19 +1,19 @@
 page-chat {
    .header {
-         background-color: #EEEEEE !important;
-                    padding-top: 24px;
-                    padding-bottom: 24px;
+        background-color: #EEEEEE !important;
+        padding-top: 24px;
+        padding-bottom: 24px;
         .toolbar{
             .toolbar-background{
-                    background-color: #EEEEEE !important;
-                   
+                    background-color: #EEEEEE !important;           
                 }
         }
     }
 
-  .toolbar-ios ion-title {
-            padding: 0 60px 1px;
+    .toolbar-ios ion-title {
+        padding: 0 60px 1px;
     }
+
     .header-ios .toolbar-ios:last-child .toolbar-background-ios{
          border: none;
 
@@ -24,11 +24,10 @@ page-chat {
         margin-left: 10px;
         margin-bottom: 5px;
     }
-    ion-navbar, .toolbar, .toolbar-title{
-        
+
+    ion-navbar, .toolbar, .toolbar-title{    
         text-align: left !important;
         background-color: #EEEEEE;
-        
     }
 
     hr{

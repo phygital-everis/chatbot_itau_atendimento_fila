@@ -32,11 +32,13 @@
     </ion-row>
     <hr>
   </div>
-  <ion-card>
+  <ion-card *ngIf="photo !== ''">
     <img [src]="photo" />
   </ion-card>
+
 </ion-content>
-<ion-footer>
+
+<ion-footer *ngIf="!photo || tipoDoc == '' ">
   <ion-toolbar>
     <ion-row>
       <ion-col>

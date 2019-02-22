@@ -14,7 +14,7 @@ import { CustomPlanePage } from "../custom-plane/custom-plane";
 export class PlanosPage {
    @ViewChild(Slides) slides: Slides;
    public nickname: string
-   public plano
+   public plano: any = ''
 
   constructor(
     public navCtrl: NavController, 
@@ -37,7 +37,7 @@ export class PlanosPage {
   }
 
    chosePlano(el) {
-     this.plano = el._elementRef.nativeElement.value        
+     this.plano = el._elementRef.nativeElement.value 
   }
 
 }

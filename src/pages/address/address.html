@@ -58,7 +58,7 @@
         </ion-item>
 
         <ion-item>
-         <button ion-button full color="primary" (click)='searchCep()' [disabled]="!cep || cep.length != 8">Buscar endereço</button>
+          <button ion-button full class="background-search-button" (click)='searchCep()' [disabled]="!cep || cep.length != 8">Buscar endereço</button>
         </ion-item>
       
       </ion-list>
@@ -67,7 +67,7 @@
 
 </ion-content>
 
-<ion-footer>
+<ion-footer *ngIf="endereco.cep && endereco.numero">
   <ion-toolbar>
     <ion-row>
       <ion-col text-center>
