@@ -79,15 +79,15 @@
             <ion-icon name="lock" item-left></ion-icon>
             <ion-input 
               text-center 
-              type=password 
+              type="password"
               placeholder="Senha" 
               [(ngModel)]="pergunta">
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isToken">
             <ion-input 
-              text-center 
-              type=password 
+              text-center
+              type="number"
               placeholder="Token" 
               [(ngModel)]="pergunta">
             </ion-input>
@@ -98,29 +98,25 @@
               type=text
               placeholder="CPF"
               [(ngModel)]="pergunta" 
-              [brmasker]="{mask:'000.000.000-00', len:14}"
-            >
+              [brmasker]="{mask:'000.000.000-00', len:14}">
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isFone">
             <ion-icon name="phone-portrait" item-left></ion-icon>
             <ion-input 
               text-center 
-              type=text 
-              placeholder="Telefone" 
-              [(ngModel)]="pergunta"
-              
-            >
+              placeholder="Celular"
+              type=tel
+              [(ngModel)]="pergunta">
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isReal">
             <ion-input 
               text-center 
+              placeholder="R$"
               type=text 
-              placeholder="(R$)" 
               [(ngModel)]="pergunta"
-             
-            >
+              [brmasker]="{money: true, thousand: ',',  decimalCaracter: '.', decimal: '3'}">
             </ion-input>
           </ion-item>
         </ion-col>
