@@ -33,14 +33,15 @@ export class TakePicturePage {
     }
 
     this.camera.getPicture(options).then((imageData) => {
+      
       this.photo = this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,' 
       + imageData);
-      
+
       this.vision.sendVision(imageData).subscribe((data)=>{
         this.navCtrl.push(ShowDocPage, { data: data, tipo:this.tipoDoc });
-      })
+      });
     }, (err) => {
-      // Handle error
+      console.log(err);
     });
   }
 
