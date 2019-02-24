@@ -10,6 +10,10 @@ page-chat {
         }
     }
 
+    .header-md::after{
+        content: none !important;   
+    }
+
     .toolbar-ios ion-title {
         padding: 0 60px 1px;
     }
@@ -90,6 +94,21 @@ page-chat {
      .hide-footer {
          display: none;
      }
+
+     .input-icon {
+        margin: 11px 8px 11px -90px;
+        
+    }
+
+    .icon-input{
+        margin-left: 50px !important;
+        color:#EC7001;
+        margin-top: 26px !important;
+    }
+
+    .label{
+         color:#eeeeee;
+    }
 
      .footer {
         background-color: #EC7001 !important;

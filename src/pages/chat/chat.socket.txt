@@ -1,4 +1,4 @@
-txtimport { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavController, NavParams, ToastController, Content } from 'ionic-angular';
 import { Socket } from 'ng-socket-io';
 import { Observable } from 'rxjs/Observable';

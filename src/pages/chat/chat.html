@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar>
     <ion-title>
       <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
@@ -76,12 +76,16 @@
       <ion-row>
         <ion-col>
           <ion-item no-lines *ngIf="isPass">
-            <ion-icon name="lock" item-left></ion-icon>
+            <ion-label stacked>Digite sua senha de 6 dígitos</ion-label>
+            <ion-icon name="lock" class="icon-input" item-left></ion-icon>
             <ion-input 
+              class="input-icon"
               text-center 
               type="password"
               placeholder="Senha" 
-              [(ngModel)]="pergunta">
+              [(ngModel)]="pergunta"
+              (ionFocus)="scrollDown()"
+            >
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isToken">
@@ -89,25 +93,34 @@
               text-center
               type="number"
               placeholder="Token" 
-              [(ngModel)]="pergunta">
+              [(ngModel)]="pergunta"
+              (ionFocus)="scrollDown()"
+            >
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isCPF">
+            <ion-label stacked text-center>Por favor informe o seu CPF</ion-label>
             <ion-input 
               text-center 
               type=text
               placeholder="CPF"
               [(ngModel)]="pergunta" 
-              [brmasker]="{mask:'000.000.000-00', len:14}">
+              [brmasker]="{mask:'000.000.000-00', len:14}"
+              (ionFocus)="scrollDown()"
+            >
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isFone">
-            <ion-icon name="phone-portrait" item-left></ion-icon>
+            <ion-label stacked>Digite o DDD e o seu fone</ion-label>
+            <ion-icon name="phone-portrait" class="icon-input" item-left></ion-icon>
             <ion-input 
+              class="input-icon"
               text-center 
               placeholder="Celular"
               type=tel
-              [(ngModel)]="pergunta">
+              [(ngModel)]="pergunta"
+              (ionFocus)="scrollDown()"
+            >
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isReal">
@@ -116,7 +129,9 @@
               placeholder="R$"
               type=text 
               [(ngModel)]="pergunta"
-              [brmasker]="{money: true, thousand: ',',  decimalCaracter: '.', decimal: '3'}">
+              [brmasker]="{money: true, thousand: ',',  decimalCaracter: '.', decimal: '3'}"
+              (ionFocus)="scrollDown()"
+            >
             </ion-input>
           </ion-item>
         </ion-col>
