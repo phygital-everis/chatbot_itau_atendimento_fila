@@ -1,0 +1,83 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <div class="bot">
+      <ion-row>
+        <ion-col text-center>
+          <img class="rounded-img" src="assets/imgs/chatbot.jpg" alt="itau logo">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h2 class="name">Itaú</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h3 class="title">Consultora de Contas</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <hr>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <p class="text">Vamos gravar um vídeo com o seu de acordo para confirmar a abertura da sua conta</p>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div class="client">
+      <ion-row>
+        <ion-col text-center>
+          <img class="rounded-img" src="assets/imgs/client.jpg" alt="itau logo">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h2 class="name">{{nickname}}</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h3 class="title">Vamos lá mostre o seu melhor sorriso</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <hr>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col >
+          <ion-item text-center no-lines (click)="recordVideo()">
+            <ion-icon class="orange-icon" name="camera"></ion-icon>
+            <p class="text">GRAVAR</p>
+          </ion-item>
+        </ion-col>
+
+      </ion-row>
+    </div>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer [ngClass]="goOn? '' : 'hide-footer'">
+  <ion-toolbar>
+    <ion-row>
+      <ion-col text-center>
+        <button  ion-button clear color="primary" (click)="confirmVideo()" [disabled]="nickname === ''">
+          Confirmar <ion-icon name="md-arrow-forward"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
