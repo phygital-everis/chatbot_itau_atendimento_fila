@@ -36,6 +36,7 @@ import { HttpGenericProvider } from '../providers/http-generic/http-generic';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
+
 @NgModule({
   declarations: [
     MyApp,

@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-//import { HomePage } from '../pages/home/home';
-import { VideoPage } from "../pages/video/video";
+import { HomePage } from '../pages/home/home';
+//import { VideoPage } from "../pages/video/video";
 //import { AddressPage } from "../pages/address/address";
 //import { TakePicturePage } from "../pages/take-picture/take-picture";
 //import { PlanosPage } from "../pages/planos/planos";
@@ -11,7 +11,7 @@ import { VideoPage } from "../pages/video/video";
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = VideoPage;
+  rootPage: any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
