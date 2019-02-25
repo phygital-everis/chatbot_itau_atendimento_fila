@@ -33,4 +33,9 @@ export class CustomPlanePage {
     this.navCtrl.push(ChatPage, { pergunta: 'plano_selecionado' })
   }
 
+  alterarValor(propriedade: string, valor: number){
+    if((valor == -1 &&  this[propriedade] > 0) || valor == 1){
+      this[propriedade] += valor;
+    }
+  }
 }

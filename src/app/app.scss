@@ -23,4 +23,17 @@ ion-header{
   .toolbar-title-md {
     color: #ffffff !important;
   }
+
+  &.header-md{
+    &::after{
+      content: none;
+    }
+  }
+
+  ion-title{
+    &.title-md{
+      padding: 0;
+      padding-bottom: 5px;
+    }
+  }
 }
