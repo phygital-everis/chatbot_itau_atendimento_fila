@@ -27,7 +27,7 @@
       </ion-row>
       <ion-item text-center>
         <ion-label  floating>Digite o CEP ou endereço:</ion-label>
-        <ion-input type="text" autofocus [(ngModel)]="cep" text-center></ion-input>
+        <ion-input type="text" [(ngModel)]="cep" text-center [brmasker]="{mask:'00000-000', len:9}"></ion-input>
       </ion-item>
 
       <ion-list>
@@ -58,7 +58,7 @@
         </ion-item>
 
         <ion-item>
-          <button ion-button full class="background-search-button" (click)='searchCep()' [disabled]="!cep || cep.length != 8">Buscar endereço</button>
+          <button ion-button full class="background-search-button" (click)='searchCep()' [disabled]="!cep || cep.length != 9">Buscar endereço</button>
         </ion-item>
       
       </ion-list>

@@ -15,6 +15,8 @@ export class CustomPlanePage {
 
   saques:number = 0
 
+  total:number = 32
+
   cheques:number = 0
 
   constructor(
@@ -33,4 +35,9 @@ export class CustomPlanePage {
     this.navCtrl.push(ChatScrollPage, { pergunta: 'plano_selecionado' })
   }
 
+  alterarValor(propriedade: string, valor: number){
+    if((valor == -1 &&  this[propriedade] > 0) || valor == 1){
+      this[propriedade] += valor;
+    }
+  }
 }
