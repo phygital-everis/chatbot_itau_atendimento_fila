@@ -55,6 +55,11 @@ export class NicknamePage {
     this.navCtrl.push(ChatPage, { nickname: this.nickname })
   }
 
+  changeChat() {
+    //TO DO
+      //Adicionar a navegação para a nova tela de chat
+  }
+ 
   savePergunta() {
     this.perguntas.push(this.nickname)
     this.localStorage.addItem('perguntas', this.perguntas)

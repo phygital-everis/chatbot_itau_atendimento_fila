@@ -60,7 +60,7 @@ export class TakePicturePage {
   async presentLoadingOptions() {
     const loading =  await this.loadingCtrl.create({
       spinner: null,
-      duration: 6000,
+      duration: 8000,
       content: 'Estamos processando as suas informações, aguarde!'
     });
     return await loading.present();
@@ -79,7 +79,6 @@ export class TakePicturePage {
         }
       ]
     });
-
     await alert.present();
   }
 
