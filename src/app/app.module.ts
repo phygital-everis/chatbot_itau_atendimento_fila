@@ -24,6 +24,7 @@ import { CustomPlanePage } from '../pages/custom-plane/custom-plane';
 import { AddressPage } from "../pages/address/address";
 import { ModalHistoryPage } from "../pages/modal-history/modal-history";
 import { VideoPage } from "../pages/video/video";
+import { ChatScrollPage } from "../pages/chat-scroll/chat-scroll";
 
 import { VisionProvider } from '../providers/vision/vision';
 import { LocalStorageProvider } from '../providers/local-storage/local-storage';
@@ -50,7 +51,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     CustomPlanePage,
     AddressPage,
     ModalHistoryPage,
-    VideoPage
+    VideoPage,
+    ChatScrollPage
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     CustomPlanePage,
     AddressPage,
     ModalHistoryPage,
-    VideoPage
+    VideoPage,
+    ChatScrollPage
   ],
   providers: [
     StatusBar,

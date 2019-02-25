@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { LocalStorageProvider } from "../../providers/local-storage/local-storage";
 import { BuscaCepProvider } from "../../providers/busca-cep/busca-cep";
-import { ChatPage } from "../chat/chat";
+//import { ChatPage } from "../chat/chat";
+import { ChatScrollPage } from "../chat-scroll/chat-scroll";
 
 @Component({
   selector: 'page-address',
@@ -43,6 +44,6 @@ export class AddressPage {
   }
 
   confirmAddress(){
-    this.navCtrl.push(ChatPage, { pergunta: 'endereco_confirmado' })
+    this.navCtrl.push(ChatScrollPage, { pergunta: 'endereco_confirmado' })
   }
 }
