@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar>
     <ion-title>
       <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
@@ -8,9 +8,28 @@
 
 <ion-content>
   <ion-grid>
-    <div class="bot">
-    
+    <div class="bot">      
       <ion-row>
+        <ion-col text-center>
+          <img class="rounded-img" src="assets/imgs/chatbot.jpg" alt="itau logo">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h2 class="name">Itaú</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h3 class="title">Consultora de Contas</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <hr>
+        </ion-col>
+      </ion-row>
+      <ion-row class="text-planos">
         <ion-col text-center>
           <p class="text">Selecionamos planos especialmente para você</p>
         </ion-col>
@@ -21,27 +40,18 @@
         <ion-col col-2 text-left>
           <img class="rounded-img2" src="assets/imgs/client.jpg" alt="itau logo">
         </ion-col>
-        <ion-col col-3 text-center>
+        <ion-col col-10>
         <h1 class="name2">{{nickname}}</h1>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col text-center>
-          <ion-slides>
+          <ion-slides [pager]="true">
             <ion-slide>
               <div class="plano">
                   <h2>Plano Alpha</h2>
                   <h3>R$30,00 / mês</h3>
                   <ion-list no-lines>
-                    <ion-item>
-                      <span>10 </span>Transferências
-                    </ion-item>
-                    <ion-item>
-                      <span>10 </span>Saques
-                    </ion-item>
-                    <ion-item>
-                      <span>10 </span>Cheques
-                    </ion-item>
                     <ion-item>
                       saiba mais
                     </ion-item>
@@ -56,15 +66,6 @@
                 <h2>Plano Beta</h2>
                 <h3>R$20,00 / mês</h3>
                 <ion-list no-lines>
-                  <ion-item>
-                    <span>8 </span>Transferências
-                  </ion-item>
-                  <ion-item>
-                    <span>5 </span>Saques
-                  </ion-item>
-                  <ion-item>
-                    <span>8 </span>Cheques
-                  </ion-item>
                   <ion-item>
                     saiba mais
                   </ion-item>

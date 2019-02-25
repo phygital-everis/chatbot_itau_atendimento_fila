@@ -3,6 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
+//import { VideoPage } from "../pages/video/video";
 //import { AddressPage } from "../pages/address/address";
 //import { TakePicturePage } from "../pages/take-picture/take-picture";
 //import { PlanosPage } from "../pages/planos/planos";

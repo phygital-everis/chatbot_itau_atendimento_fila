@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams, ToastController, ModalController  } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, ToastController, ModalController, Content  } from 'ionic-angular';
 import { WatsonapiProvider } from "../../providers/watsonapi/watsonapi";
 import { LocalStorageProvider } from "../../providers/local-storage/local-storage";
 import { TakePicturePage } from "../take-picture/take-picture";
 import { PlanosPage } from "../planos/planos";
 import { AddressPage } from "../address/address";
 import { HomePage } from "../home/home";
+import { VideoPage } from "../video/video";
 import { SendSmsPage } from "../send-sms/send-sms";
 import { ModalHistoryPage } from '../modal-history/modal-history';
 
@@ -18,6 +19,8 @@ import { ModalHistoryPage } from '../modal-history/modal-history';
   ]
 })
 export class ChatPage {
+  @ViewChild(Content) contentArea: Content;
+
   public nickname : string
   public botName: string = "Itaú"
   public perguntas = new Array()  
@@ -51,6 +54,7 @@ export class ChatPage {
     'Escolher plano',
     'Enviar documento',
     'Enviar endereço',
+    'Gravar vídeo',
     'Retornar para Home'
   ]
   public passoAtual = 0
@@ -229,6 +233,9 @@ export class ChatPage {
       this.address()
     }
     if (this.passoAtual == 7) {
+      this.video()
+    }
+    if (this.passoAtual == 8) {
       this.home()
     }
     this.passoAtual++
@@ -258,6 +265,10 @@ export class ChatPage {
     this.navCtrl.push(HomePage)
   }  
 
+  video() {
+    this.navCtrl.push(VideoPage)
+  }  
+
   presentToast(msg) {
     const toast = this.toastCtrl.create({
       message: msg,
@@ -270,5 +281,9 @@ export class ChatPage {
   presentModal(tipo) {
     const modal = this.modalCtrl.create(ModalHistoryPage,{tipo:tipo});
     modal.present();
+  }
+
+  scrollDown(){    
+      this.contentArea.scrollToBottom()
   }
 }

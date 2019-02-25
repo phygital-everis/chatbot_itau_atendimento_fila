@@ -1,23 +1,23 @@
-page-chat {
-   .header {
-        background-color: #EEEEEE !important;
-        padding-top: 24px;
-        padding-bottom: 24px;
+page-video {
+
+    .header {
+         background-color: #EEEEEE !important;
+                    padding-top: 24px;
+                    padding-bottom: 24px;
         .toolbar{
             .toolbar-background{
-                    background-color: #EEEEEE !important;           
+                    background-color: #EEEEEE !important;
+                   
                 }
         }
     }
-
-    .header-md::after{
-        content: none !important;   
+    ion-input {
+        right: 0px!important;
+        position: absolute;
     }
-
     .toolbar-ios ion-title {
-        padding: 0 60px 1px;
+            padding: 0 60px 1px;
     }
-
     .header-ios .toolbar-ios:last-child .toolbar-background-ios{
          border: none;
 
@@ -28,10 +28,11 @@ page-chat {
         margin-left: 10px;
         margin-bottom: 5px;
     }
-
-    ion-navbar, .toolbar, .toolbar-title{    
+    ion-navbar, .toolbar, .toolbar-title{
+        
         text-align: left !important;
         background-color: #EEEEEE;
+        
     }
 
     hr{
@@ -42,8 +43,7 @@ page-chat {
             border-width: 0.55px !important;
     }
     col, .grid{
-        padding: 0!important;
-
+        padding: 0;
     }
 
     .bot{
@@ -57,18 +57,10 @@ page-chat {
          height: 55%;
     }
 
-    .custom-icon{
-        font-size: 2em;
-        color:#EC7001;
-        right: 25%;
-        top: 40%;
-        position: absolute;
-    }
-
     .rounded-img{
         border-radius: 50%;
         width:100px;
-        height: 100px;
+        height:100px;
         border:1px solid #EC7001;
     }
 
@@ -90,31 +82,15 @@ page-chat {
         font-size: 16px;
         margin-top: 0px;
     }
-     
-     .hide-footer {
-         display: none;
-     }
-
-     .input-icon {
-        margin: 11px 8px 11px -90px;
-        
+    .hide-footer {
+        display: none;
     }
 
-    .icon-input{
-        margin-left: 50px !important;
+    .orange-icon{
         color:#EC7001;
-        margin-top: 26px !important;
-    }
+        font-size: 40px;
 
-    .label{
-         color:#eeeeee;
     }
-
-    .item-inner{
-        border: none !important;
-        box-shadow: none !important;
-    }
-
      .footer {
         background-color: #EC7001 !important;
         color: #ffffff;        

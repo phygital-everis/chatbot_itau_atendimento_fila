@@ -31,7 +31,7 @@
       </ion-row>
       <ion-row>
         <ion-col text-center>
-          <p class="text">{{resposta}}</p>
+          <p class="text">Vamos gravar um vídeo com o seu de acordo para confirmar a abertura da sua conta</p>
         </ion-col>
       </ion-row>
     </div>
@@ -48,7 +48,7 @@
       </ion-row>
       <ion-row>
         <ion-col text-center>
-          <h3 class="title">Nome ou apelido</h3>
+          <h3 class="title">Vamos lá mostre o seu melhor sorriso</h3>
         </ion-col>
       </ion-row>
       <ion-row>
@@ -57,26 +57,27 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>
-          <ion-item no-lines>
-            <ion-input text-center type="text" placeholder="Digite seu Nome" [(ngModel)]="nickname" minlength="3"></ion-input>
+        <ion-col >
+          <ion-item text-center no-lines (click)="recordVideo()">
+            <ion-icon class="orange-icon" name="camera"></ion-icon>
+            <p class="text">GRAVAR</p>
           </ion-item>
         </ion-col>
-        
+
       </ion-row>
     </div>
   </ion-grid>
 
 </ion-content>
 
-<ion-footer [ngClass]= "nickname ? '' : 'hide-footer'">
+<ion-footer [ngClass]="goOn? '' : 'hide-footer'">
   <ion-toolbar>
     <ion-row>
-    <ion-col text-center>
-      <button ion-button clear color="primary" (click)="confirmNickname()" [disabled]="nickname === ''">
-        Agora o CPF <ion-icon name="md-arrow-forward"></ion-icon>
-      </button>
-    </ion-col>
+      <ion-col text-center>
+        <button  ion-button clear color="primary" (click)="confirmVideo()" [disabled]="nickname === ''">
+          Confirmar <ion-icon name="md-arrow-forward"></ion-icon>
+        </button>
+      </ion-col>
     </ion-row>
   </ion-toolbar>
 </ion-footer>
