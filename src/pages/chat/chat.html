@@ -80,18 +80,17 @@
             <ion-icon name="lock" class="icon-input" item-left></ion-icon>
             <ion-input 
               class="input-icon"
-              text-center 
-              type="password"
+              text-center
+              type=password
               placeholder="Senha" 
               [(ngModel)]="pergunta"
-              (ionFocus)="scrollDown()"
-            >
+              (ionFocus)="scrollDown()">
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isToken">
-            <ion-input 
+            <ion-input
               text-center
-              type="number"
+              type=tel
               placeholder="Token" 
               [(ngModel)]="pergunta"
               (ionFocus)="scrollDown()"
@@ -116,22 +115,23 @@
             <ion-input 
               class="input-icon"
               text-center 
+              [(ngModel)]="pergunta"
+              [brmasker]="{mask:'(00)00000-0000', len:14}"
               placeholder="Celular"
               type=tel
               [(ngModel)]="pergunta"
-              (ionFocus)="scrollDown()"
-            >
+              (ionFocus)="scrollDown()">
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isReal">
+            <p>R$</p>
             <ion-input 
               text-center 
-              placeholder="R$"
-              type=text 
+              type=text
+              placeholder="(R$)"
               [(ngModel)]="pergunta"
               [brmasker]="{money: true, thousand: ',',  decimalCaracter: '.', decimal: '3'}"
-              (ionFocus)="scrollDown()"
-            >
+              (ionFocus)="scrollDown()">
             </ion-input>
           </ion-item>
         </ion-col>

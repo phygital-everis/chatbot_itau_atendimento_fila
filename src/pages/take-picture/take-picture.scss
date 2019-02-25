@@ -1,14 +1,16 @@
 page-take-picture {
 
      .header {
-         background-color: #EEEEEE !important;
-                    padding-top: 24px;
-                    padding-bottom: 24px;
+        background-color: #EEEEEE !important;
+        padding-top: 24px;
+        padding-bottom: 24px;
+        box-shadow: none!important;
         .toolbar{
             .toolbar-background{
-                    background-color: #EEEEEE !important;
+                background-color: #EEEEEE !important;
+                box-shadow: none!important;
                    
-                }
+            }
         }
     }
     .toolbar-title {
@@ -16,13 +18,19 @@ page-take-picture {
         text-overflow: ellipsis;
         white-space: normal;
         color: #EC7001;
+        box-shadow: none;
         img{
-            margin-top: 20px;
+            margin-top: 12px;
         }
     }
 
     .title {
-            padding: 0 60px 1px;
+        padding: 0 0px 1px;
+        width: 80%;
+        p {
+            color: #EC7001;
+            font-size: 14px;
+        }
     }
     .header-ios .toolbar-ios:last-child .toolbar-background-ios{
          border: none;
