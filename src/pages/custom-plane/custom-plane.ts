@@ -15,6 +15,8 @@ export class CustomPlanePage {
 
   saques:number = 0
 
+  total:number = 32
+
   cheques:number = 0
 
   constructor(

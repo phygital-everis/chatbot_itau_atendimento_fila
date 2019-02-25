@@ -115,20 +115,26 @@ page-custom-plane {
         padding: 0;
     }
 
-   .knob{       
-        border-radius: 50%;
-        width: 100%;
-        top: .8em;
+   .knob{
         font-size: x-large;
-        position: absolute;
         color: grey;
         font-weight: bold;
-        text-align: center;
    }
 
     ion-list {
         &.list-propriedades ion-row{
             border-bottom: solid #dcdcdc 1px;
+            align-items: center;
+
+            &.toggle{
+                align-items: normal;
+            }
+
+            ion-col{
+                &.level{
+                    text-align: center;
+                }
+            }
         }
     }   
 
@@ -144,7 +150,7 @@ page-custom-plane {
         padding: 0;
         height: 30px;
         width: 30px;
-        margin-top: 12px;
+        // margin-top: 12px;
         font-size: 30px;
         font-weight: 300;
         border-radius: 50%;
@@ -193,7 +199,8 @@ page-custom-plane {
         background-color: #dedede;
         -webkit-transition: background-color 300ms;
         transition: background-color 100ms;
-        pointer-events: none;
+        pointer-events: none;            
+        margin-top: 1em;
     }
     
     .toggle.toggle-checked .toggle-inner {
@@ -205,15 +212,25 @@ page-custom-plane {
     .toggle.toggle-checked .toggle-icon {
         background-color: #f9cc9d;
     }
-    
-    .toggle .toggle-inner {
+
+    .toggle-md{
+        .toggle-icon{                    
+             margin-top: auto;
+        }
         
+        .toggle-inner{
+            top: 0px;
+            height: 95%;
+        }
+        
+    /*  */
+    }
+
+    .toggle .toggle-inner {
         left: 0;
         position: absolute;
         border-radius: inherit;
-        top: 0px;
         width: 50%;
-        height: 25px;
         background-color: #fff;
         -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
