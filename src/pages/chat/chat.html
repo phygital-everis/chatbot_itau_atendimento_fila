@@ -81,17 +81,16 @@
             <ion-input 
               class="input-icon"
               text-center 
-              type="password"
+              type=password
               placeholder="Senha" 
               [(ngModel)]="pergunta"
-              (ionFocus)="scrollDown()"
-            >
+              (ionFocus)="scrollDown()">
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isToken">
             <ion-input 
               text-center
-              type="number"
+              type=tel
               placeholder="Token" 
               [(ngModel)]="pergunta"
               (ionFocus)="scrollDown()"
