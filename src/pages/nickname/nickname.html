@@ -66,10 +66,6 @@
       </ion-row>
     </div>
   </ion-grid>
-  <button class="new-chat" [ngClass]="!nickname ? '' : 'hide-footer'" ion-button clear color="primary" (click)="changeChat()">
-    Nova experiência de chat
-    <ion-icon name="md-arrow-forward"></ion-icon>
-  </button>
 </ion-content>
 
 <ion-footer [ngClass]="nickname ? '' : 'hide-footer'">
