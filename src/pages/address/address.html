@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header no-border>
   <ion-navbar>
     <ion-title>
       <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
@@ -8,72 +8,90 @@
 
 <ion-content>
   <ion-grid>
-    
     <div class="bot">
       <ion-row>
         <ion-col text-center>
-          <p class="text">Precisamos do seu endereço agora</p>
+          <img class="rounded-img" src="assets/imgs/chatbot.jpg" alt="itau logo">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h2 class="name">Itaú</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <h3 class="title">Consultora de Contas</h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <hr>
         </ion-col>
       </ion-row>
     </div>
     <div class="client">
       <ion-row>
-        <ion-col col-2 text-left>
-          <img class="rounded-img2" src="assets/imgs/client.jpg" alt="itau logo">
-        </ion-col>
-        <ion-col col-3 text-center>
-          <h1 class="name2">{{nickname}}</h1>
+        <ion-col text-center>
+          <img class="rounded-img" src="assets/imgs/client.jpg" alt="itau logo">
         </ion-col>
       </ion-row>
-      <ion-item text-center>
-        <ion-label  floating>Digite o CEP ou endereço:</ion-label>
-        <ion-input type="text" [(ngModel)]="cep" text-center [brmasker]="{mask:'00000-000', len:9}"></ion-input>
-      </ion-item>
-
-      <ion-list>
-      
-        <ion-item>
-          <ion-label fixed>Logradouro: </ion-label>
-          <ion-input type="text" [(ngModel)]="endereco.logradouro"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label fixed>Número: </ion-label>
-          <ion-input type="text" [(ngModel)]="endereco.numero"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label fixed>Bairo: </ion-label>
-          <ion-input type="text" [(ngModel)]="endereco.bairro"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label fixed>Cidade: </ion-label>
-          <ion-input type="text" [(ngModel)]="endereco.localidade"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <ion-label fixed>UF: </ion-label>
-          <ion-input type="text" [(ngModel)]="endereco.uf"></ion-input>
-        </ion-item>
-
-        <ion-item>
-          <button ion-button full class="background-search-button" (click)='searchCep()' [disabled]="!cep || cep.length != 9">Buscar endereço</button>
-        </ion-item>
-      
-      </ion-list>
+      <ion-row>
+        <ion-col text-center>
+          <h2 class="name">{{nickname}}</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <p class="title">Comece pelo CEP para preencher automaticamente</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <hr>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="procedimento != 'Confirmar'">
+        <ion-col>
+          <ion-item no-lines>
+            <ion-input class="cep" text-center type="text" placeholder="CEP" [(ngModel)]="input" minlength="3"></ion-input>
+          </ion-item>
+        </ion-col>        
+      </ion-row>
+      <ion-row class="info-endereco" *ngIf="endereco.cep">        
+        <ion-col col-12 text-center>
+            <p class="title logradouro">
+              <span><img class="img-endereco" src="assets/imgs/endereco.svg"></span>
+              {{endereco.logradouro}}
+            </p>
+        </ion-col>
+        <ion-col col-12 text-center>
+            <p class="title">{{endereco.bairro + ", " + endereco.localidade}}</p>
+        </ion-col>
+      </ion-row>      
+      <ion-row *ngIf="procedimento == 'Confirmar'" >
+        <ion-col>
+          <ion-item no-lines>
+            <ion-input text-center type="text" placeholder="número, complemento" [(ngModel)]="input" minlength="3"></ion-input>
+          </ion-item>
+        </ion-col>        
+      </ion-row>
     </div>
   </ion-grid>
 
 </ion-content>
 
-<ion-footer *ngIf="endereco.cep && endereco.numero">
+<ion-footer [ngClass]= "nickname ? '' : 'hide-footer'">
   <ion-toolbar>
     <ion-row>
       <ion-col text-center>
-        <button ion-button clear color="primary" (click)="confirmAddress()">
-          Confirmar Endereço <ion-icon name="md-arrow-forward"></ion-icon>
+        <button ion-button clear color="primary" *ngIf="procedimento != 'Confirmar'" (click)="(procedimento == 'Buscar endereço') ? searchCep() : infoComplement()" [disabled]="nickname === ''">
+          {{procedimento}} <ion-icon name="md-arrow-forward"></ion-icon>
         </button>
+        <button ion-button clear color="primary" *ngIf="procedimento == 'Confirmar'" 
+            (click)="confirmAddress()" [disabled]="nickname === ''">
+          {{procedimento}} <ion-icon name="md-arrow-forward"></ion-icon>
+        </button>        
       </ion-col>
     </ion-row>
   </ion-toolbar>
