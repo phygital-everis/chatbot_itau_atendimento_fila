@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { ChatPage } from "../chat/chat";
+//import { ChatPage } from "../chat/chat";
+import { ChatScrollPage } from "../chat-scroll/chat-scroll";
 
 
 @Component({
@@ -127,7 +128,7 @@ export class ShowDocPage {
   }
 
   confirm(){
-    this.navCtrl.push(ChatPage,{ pergunta: 'doc_enviado' });
+    this.navCtrl.push(ChatScrollPage,{ pergunta: 'doc_enviado' });
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { ChatPage } from "../chat/chat";
+//import { ChatPage } from "../chat/chat";
+import { ChatScrollPage } from "../chat-scroll/chat-scroll";
 import { LocalStorageProvider } from "../../providers/local-storage/local-storage";
 import { MediaCapture } from '@ionic-native/media-capture';
 
@@ -33,7 +34,7 @@ export class VideoPage {
   }
 
   confirmVideo(){
-    this.navCtrl.push(ChatPage, { pergunta: 'video_ok' });
+    this.navCtrl.push(ChatScrollPage, { pergunta: 'video_ok' });
   }
 
 }
