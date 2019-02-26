@@ -1,0 +1,110 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title>
+      <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row *ngFor="let message of messages">
+      <ion-col col-9 *ngIf="message.from !== nickname" >
+        <ion-row>
+          <ion-col col-3 >
+            <img class="rounded-img" src="assets/imgs/chatbot.jpg" alt="itau logo">
+          </ion-col>
+          <ion-col col-9 class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
+            <span class="user_name">{{ message.from }}</span><br>
+            <span class="user_text">{{ message.text }}</span>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col offset-3 col-9 *ngIf="message.from === nickname">
+        <ion-row>
+          <ion-col col-9 class="message"
+            [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
+            <span class="user_name">{{ message.from }}</span><br>
+            <span>{{ message.text }}</span>
+          </ion-col>
+          <ion-col col-3>
+            <img class="rounded-img" src="assets/imgs/client.jpg" alt="itau logo">
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row class="message_row">
+      <ion-col col-10 text-center>
+       <ion-item no-lines *ngIf="isPass">
+            <ion-icon name="lock" class="icon-input" item-left></ion-icon>
+            <ion-input 
+              class="input-icon"
+              text-center 
+              type="password"
+              placeholder="Digite sua senha de 6 dígitos" 
+              [(ngModel)]="message.text"
+              (ionFocus)="scrollDown()"
+            >
+            </ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="isToken">
+            <ion-input 
+              text-center
+              type="number"
+              placeholder="Token" 
+              [(ngModel)]="message.text"
+              (ionFocus)="scrollDown()"
+            >
+            </ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="isCPF">
+            <ion-input 
+              text-center 
+              type=text
+              placeholder="Por favor informe o seu CPF"
+              [(ngModel)]="message.text" 
+              [brmasker]="{mask:'000.000.000-00', len:14}"
+              (ionFocus)="scrollDown()"
+            >
+            </ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="isFone">
+            <ion-icon name="phone-portrait" class="icon-input" item-left></ion-icon>
+            <ion-input 
+              class="input-icon"
+              text-center 
+              placeholder="Digite o DDD e o seu fone"
+              type=tel
+              [(ngModel)]="message.text"
+              [brmasker]="{phone: true}"
+              (ionFocus)="scrollDown()"
+            >
+            </ion-input>
+          </ion-item>
+          <ion-item no-lines *ngIf="isReal">
+            <p>R$</p>
+            <ion-input 
+              text-center 
+              placeholder="R$"
+              type=text 
+              [(ngModel)]="message.text"
+              [brmasker]="{money: true, thousand: ',',  decimalCaracter: '.', decimal: '3'}"
+              (ionFocus)="scrollDown()"
+            >
+            </ion-input>
+          </ion-item>
+      </ion-col>
+      <ion-col col-2 text-center>
+        <button ion-button clear color="primary" (click)="nextStep();sendMessage()">
+          <ion-icon name="md-send"></ion-icon>
+        </button>
+      </ion-col>
+  </ion-row>
+</ion-toolbar>
+</ion-footer>

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, IonicPageModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
@@ -24,6 +24,7 @@ import { CustomPlanePage } from '../pages/custom-plane/custom-plane';
 import { AddressPage } from "../pages/address/address";
 import { ModalHistoryPage } from "../pages/modal-history/modal-history";
 import { VideoPage } from "../pages/video/video";
+import { ChatScrollPage } from "../pages/chat-scroll/chat-scroll";
 
 import { VisionProvider } from '../providers/vision/vision';
 import { LocalStorageProvider } from '../providers/local-storage/local-storage';
@@ -50,7 +51,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     CustomPlanePage,
     AddressPage,
     ModalHistoryPage,
-    VideoPage
+    VideoPage,
+    ChatScrollPage
   ],
   imports: [
     BrowserModule,
@@ -66,7 +68,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     HttpClientModule,
     SocketIoModule.forRoot(config),
     IonicStorageModule.forRoot(),
-    BrMaskerModule
+    BrMaskerModule,
+    IonicPageModule.forChild(HomePage)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -81,7 +84,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     CustomPlanePage,
     AddressPage,
     ModalHistoryPage,
-    VideoPage
+    VideoPage,
+    ChatScrollPage
   ],
   providers: [
     StatusBar,

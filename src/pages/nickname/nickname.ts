@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ChatPage } from "../chat/chat";
-//import { HttpEvaProvider } from "../../providers/http-eva/http-eva";
+import { ChatScrollPage } from "../chat-scroll/chat-scroll";
 import { LocalStorageProvider } from "../../providers/local-storage/local-storage";
 import { WatsonapiProvider } from "../../providers/watsonapi/watsonapi";
 
@@ -55,6 +55,11 @@ export class NicknamePage {
     this.navCtrl.push(ChatPage, { nickname: this.nickname })
   }
 
+  changeChat() {
+    this.savePergunta()
+    this.navCtrl.push(ChatScrollPage, { nickname: this.nickname })
+  }
+ 
   savePergunta() {
     this.perguntas.push(this.nickname)
     this.localStorage.addItem('perguntas', this.perguntas)

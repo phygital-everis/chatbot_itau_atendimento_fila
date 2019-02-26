@@ -1,15 +1,20 @@
 page-nickname {
 
     .header {
-         background-color: #EEEEEE !important;
-                    padding-top: 24px;
-                    padding-bottom: 24px;
+        background-color: #EEEEEE !important;
+        padding-top: 24px;
+        padding-bottom: 24px;
         .toolbar{
             .toolbar-background{
-                    background-color: #EEEEEE !important;
-                   
-                }
+                background-color: #EEEEEE !important;
+       
+            }
         }
+    }
+    .new-chat {
+        margin-left: 22%;
+        top: 8px;
+        display: block;
     }
     ion-input {
         right: 0px!important;

@@ -71,7 +71,6 @@ page-chat {
         height: 100px;
         border:1px solid #EC7001;
     }
-
     .name{
         color:#EC7001;
         font-weight: bold;
@@ -114,8 +113,11 @@ page-chat {
         border: none !important;
         box-shadow: none !important;
     }
+    .hide-button {
+        display: none;
+    }
 
-     .footer {
+    .footer {
         background-color: #EC7001 !important;
         color: #ffffff;        
         .toolbar{
