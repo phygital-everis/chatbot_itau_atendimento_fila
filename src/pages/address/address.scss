@@ -32,13 +32,7 @@ page-address {
         
     }
 
-    hr{
-        width: 30%;
-        margin-top: 10px;
-            background-color: #cccccc !important;
-            height: 0.55px !important;
-            border-width: 0.55px !important;
-    }
+    
     col, .grid{
         padding: 0;
     }
@@ -56,13 +50,15 @@ page-address {
 
     .rounded-img{
         border-radius: 50%;
-        width:50px;
+        width: 70px;
+        height: 70px;
         border:1px solid #EC7001;
     }
     .rounded-img2{
         margin-left: 15px;
         border-radius: 50%;
-        width:50px;
+        width: 70px;
+        height: 70px;
         border:1px solid #EC7001;
     }
 
@@ -81,7 +77,7 @@ page-address {
     }
 
     .title{
-        color:#777777;
+        color: #B4B3B3;
         font-size: 12px;
         margin-top: 0;
         margin-bottom: -1rem;
@@ -124,6 +120,76 @@ page-address {
         background-color: #EC7001 !important;
         color: #ffffff;
     }
+
+    hr{
+        width: 30%;
+        margin-top: 10px;
+            background-color: #cccccc !important;
+            height: 0.55px !important;
+            border-width: 0.55px !important;
+    }
+
+    .info-endereco{      
+        align-items: flex-start;
+
+        .img-endereco{
+            height: 20px;
+        }
+
+        .title{
+            padding: 0;
+            
+            &.logradouro{         
+                padding-right: 0.5em;           
+                font-size: 16px;
+            }
+        }
+    }
+    
+    .text-input{
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .fab{
+        bottom: 2em;
+    }
+
+    .item-input{
+        background-color: transparent;
+        
+        .input-wrapper{
+            height: 15px;
+            .cep{
+                height: 20px;
+            }
+        }
+
+        .text-input-ios{
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .item-inner{
+            padding: 0;
+
+            
+        }
+    }
+
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+        border-bottom-color: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .item-md.item-input.item-input-has-focus .item-inner, .item-md.item-input.input-has-focus .item-inner{
+        border-bottom-color: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    
 
 }
 

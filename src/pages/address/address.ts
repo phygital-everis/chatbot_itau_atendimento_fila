@@ -11,8 +11,9 @@ import { ChatPage } from "../chat/chat";
 })
 export class AddressPage {
 
-  nickname
-  cep
+  public procedimento: string = "Buscar endereço";
+  nickname;
+  input;
 
   endereco = {
     "cep": "",
@@ -20,8 +21,11 @@ export class AddressPage {
     "numero":"",
     "bairro": "",
     "localidade": "",
-    "uf": ""
+    "uf": "",
+    "complemento": ""
   }
+
+  
 
   constructor(
     public navCtrl: NavController, 
@@ -37,12 +41,23 @@ export class AddressPage {
   }
 
   searchCep(){
-    this.buscaCep.getAddress(this.cep).subscribe((address)=>{
-        this.endereco = address
+    this.buscaCep.getAddress(this.input).subscribe((address)=>{
+      if(address){
+        this.endereco = address;        
+        this.procedimento = "número, complemento";
+      }        
     });
   }
 
+  infoComplement(){
+    this.input = "";
+    this.procedimento = "Confirmar";
+  }
+
   confirmAddress(){
-    this.navCtrl.push(ChatPage, { pergunta: 'endereco_confirmado' })
+    this.endereco.numero = String(this.input).split(',')[0].trim();
+    this.endereco.complemento = String(this.input).split(',')[1].trim();
+    console.log('endereco_confirmado', this.endereco);    
+    this.navCtrl.push(ChatPage, { pergunta: 'endereco_confirmado' });
   }
 }

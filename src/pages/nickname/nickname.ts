@@ -13,8 +13,8 @@ import { WatsonapiProvider } from "../../providers/watsonapi/watsonapi";
 export class NicknamePage {
   nickname = '';
   
-  resposta
-  token
+  resposta;
+  token;
   pergunta = 
     {
       "session_id": "", 
