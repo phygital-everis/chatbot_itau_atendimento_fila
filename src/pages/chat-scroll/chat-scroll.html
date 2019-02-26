@@ -15,8 +15,8 @@
             <img class="rounded-img" src="assets/imgs/chatbot.jpg" alt="itau logo">
           </ion-col>
           <ion-col col-9 class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
-            <span class="user_name">{{ message.from }}:</span><br>
-            <span>{{ message.text }}</span>
+            <span class="user_name">{{ message.from }}</span><br>
+            <span class="user_text">{{ message.text }}</span>
           </ion-col>
         </ion-row>
       </ion-col>
@@ -24,7 +24,7 @@
         <ion-row>
           <ion-col col-9 class="message"
             [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
-            <span class="user_name">{{ message.from }}:</span><br>
+            <span class="user_name">{{ message.from }}</span><br>
             <span>{{ message.text }}</span>
           </ion-col>
           <ion-col col-3>
@@ -100,11 +100,11 @@
             </ion-input>
           </ion-item>
       </ion-col>
-    <ion-col col-2 text-center>
-      <button ion-button clear color="primary" (click)="nextStep();sendMessage()">
-        <ion-icon name="md-arrow-forward"></ion-icon>
-      </button>
-    </ion-col>
+      <ion-col col-2 text-center>
+        <button ion-button clear color="primary" (click)="nextStep();sendMessage()">
+          <ion-icon name="md-send"></ion-icon>
+        </button>
+      </ion-col>
   </ion-row>
 </ion-toolbar>
 </ion-footer>
