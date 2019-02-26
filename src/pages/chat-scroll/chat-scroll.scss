@@ -50,6 +50,15 @@ page-chat-scroll {
         border-radius: 20px !important;
         margin-bottom: 14px !important;
     }
+    .user_name {
+        height: 8px;
+        font-weight: bold;
+        display: block;
+    }
+    .user_text {
+        color: #000000;
+        padding-top: 20px!important;
+    }
     .my_message {
         color: #000000 !important;
         background: #cccccc !important;

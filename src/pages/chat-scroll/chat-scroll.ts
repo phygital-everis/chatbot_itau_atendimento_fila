@@ -99,6 +99,7 @@ export class ChatScrollPage {
       }
     })
   }
+  
   //recupera token salvo no localstorage
   getToken() {
     return this.localStorage.getItems('urlToken').then(
@@ -115,7 +116,7 @@ export class ChatScrollPage {
     this.saveMessages()
     this.whatson.sendMsg(this.msgJson).subscribe((data) => {
       if (data && data != 'undefined') {
-        this.message.from = 'chatbot'
+        this.message.from = 'Assistente virtual Itaú'
         this.message.text = data.output.generic[0].text
         this.evaluateResposta()
         this.saveMessages()
@@ -128,7 +129,7 @@ export class ChatScrollPage {
     this.msgJson.message = this.nickname
     this.whatson.sendMsg(this.msgJson).subscribe((data) => {
       this.message.text = data.output.generic[0].text
-      this.message.from = 'chatbot'
+      this.message.from = 'Assistente virtual Itaú'
       this.evaluateResposta()
       this.saveMessages()
     })
