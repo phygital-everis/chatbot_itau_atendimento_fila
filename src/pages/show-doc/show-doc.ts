@@ -128,7 +128,7 @@ export class ShowDocPage {
   }
 
   confirm(){
-    this.navCtrl.push(ChatScrollPage,{ pergunta: 'doc_enviado' });
+    this.navCtrl.push(ChatScrollPage, { pergunta: 'doc_enviado', passo: 6 });
   }
 
 }

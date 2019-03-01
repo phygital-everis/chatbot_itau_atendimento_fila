@@ -72,10 +72,7 @@
   <ion-toolbar>
     <ion-row>
     <ion-col text-center>
-      <button class="new-chat" ion-button clear [ngClass]="nickname ? '' : 'hide-footer'" color="primary" (click)="changeChat()">
-        Nova experiência de chat
-        <ion-icon name="md-arrow-forward"></ion-icon>
-      </button>
+      
       <button ion-button clear color="primary" (click)="confirmNickname()" [disabled]="nickname === ''">
         Agora o CPF <ion-icon name="md-arrow-forward"></ion-icon>
       </button>

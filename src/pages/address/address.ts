@@ -59,6 +59,6 @@ export class AddressPage {
     this.endereco.numero = String(this.input).split(',')[0].trim();
     this.endereco.complemento = String(this.input).split(',')[1].trim();
     console.log('endereco_confirmado', this.endereco);    
-    this.navCtrl.push(ChatPage, { pergunta: 'endereco_confirmado' });
+    this.navCtrl.push(ChatScrollPage, { pergunta: 'endereco_confirmado', passo: 7});
   }
 }

@@ -34,7 +34,7 @@ export class VideoPage {
   }
 
   confirmVideo(){
-    this.navCtrl.push(ChatScrollPage, { pergunta: 'video_ok' });
+    this.navCtrl.push(ChatScrollPage, { pergunta: 'video_ok', passo: 8 });
   }
 
 }

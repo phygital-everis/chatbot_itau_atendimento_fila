@@ -92,6 +92,21 @@ page-chat-scroll {
             margin-left: 10px;
         }
 
+        .btn-footer-next-step{
+            border-radius: 20px;
+            height: 2.8em;
+            width: 4.8em;
+            padding: 5px;
+            text-align: center;
+            background-color: #EC7001 !important;
+            color: #ffffff; 
+        }
+        .icon-footer-next-step{
+            font-size: 2em;
+            color: #ffffff; 
+            margin-left: 0;
+        }
+
        
         ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         font-size: 14px;

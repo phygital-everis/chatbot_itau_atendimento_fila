@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { ChatPage } from "../chat/chat";
+//import { ChatPage } from "../chat/chat";
 import { LocalStorageProvider } from "../../providers/local-storage/local-storage";
 import { ChatScrollPage } from "../chat-scroll/chat-scroll";
 
@@ -32,7 +32,7 @@ export class CustomPlanePage {
   }
 
   confirmPacote() {
-    this.navCtrl.push(ChatScrollPage, { pergunta: 'plano_selecionado' })
+    this.navCtrl.push(ChatScrollPage, { pergunta: 'plano_selecionado', passo: 5 })
   }
 
   alterarValor(propriedade: string, valor: number){

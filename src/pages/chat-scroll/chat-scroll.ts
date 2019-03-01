@@ -29,6 +29,10 @@ export class ChatScrollPage {
   isCPF: boolean = false
   isFone: boolean = false
   isReal: boolean = false
+  isDoc: boolean = false
+  isEnd: boolean = false
+  isPlan: boolean = false
+  isVideo: boolean = false
   dados = {
     "cpf": "",
     "celular": "",
@@ -61,6 +65,12 @@ export class ChatScrollPage {
     public toastCtrl: ToastController,
     public modalCtrl: ModalController
   ) {
+    if (this.navParams.get('passo')) {
+      this.passoAtual = this.navParams.get('passo')
+      console.log(this.passoAtual);
+      this.nextStep()
+      
+    }
     //verifica se o nickname já está gravado no localstorage
     this.localStorage.getItems('nickname').then(
       (response) => {
@@ -194,6 +204,8 @@ export class ChatScrollPage {
   }
 //salva as perguntas, respostas e última pergunta e última resposta
   saveMessages() {
+    console.log(this.message.from+' : '+this.message.text);
+    
     let msg = new MessageScroll()
     msg.from = this.message.from
     msg.text = this.message.text
@@ -204,6 +216,8 @@ export class ChatScrollPage {
   }
 //
   nextStep() {
+    console.log('passo: ' + this.passoAtual);
+    
     if (this.passoAtual == 0) {
       this.dados.cpf = this.message.text
     }
@@ -211,18 +225,28 @@ export class ChatScrollPage {
       this.isCPF = false
     }
     if (this.passoAtual == 4) {
-      this.planos()
+      this.isPlan = true
     }
     if (this.passoAtual == 5) {
-      this.takePicture()
+      this.isPlan = false
+      this.isDoc = true
     }
     if (this.passoAtual == 6) {
-      this.address()
+      this.isPlan = false
+      this.isDoc = false
+      this.isEnd = true
     }
     if (this.passoAtual == 7) {
-      this.video()
+      this.isPlan = false
+      this.isDoc = false
+      this.isEnd = false
+      this.isVideo = true
     }
     if (this.passoAtual == 8) {
+      this.isPlan = false
+      this.isDoc = false
+      this.isEnd = false
+      this.isVideo = false
       this.home()
     }
     this.passoAtual++

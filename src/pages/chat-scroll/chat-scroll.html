@@ -39,7 +39,7 @@
 
 <ion-footer>
   <ion-toolbar>
-    <ion-row class="message_row">
+    <ion-row class="message_row" *ngIf="!isDoc && !isEnd && !isPlan && !isVideo">
       <ion-col col-10 text-center>
        <ion-item no-lines *ngIf="isPass">
             <ion-icon name="lock" class="icon-input" item-left></ion-icon>
@@ -105,6 +105,34 @@
           <ion-icon name="md-send"></ion-icon>
         </button>
       </ion-col>
+  </ion-row>
+  <ion-row class="message_row" *ngIf="isDoc">
+    <ion-col  text-center>
+      <button *ngIf="isDoc" ion-button clear class="btn-footer-next-step" (click)="takePicture()">
+        <ion-icon class="icon-footer-next-step" name="camera"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="message_row" *ngIf="isEnd">
+    <ion-col text-center>
+    <button *ngIf="isEnd" ion-button clear class="btn-footer-next-step" (click)="address()">
+      <ion-icon class="icon-footer-next-step" name="mail-open"></ion-icon>
+    </button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="message_row" *ngIf="isPlan">
+    <ion-col text-center>
+      <button *ngIf="isPlan" ion-button clear class="btn-footer-next-step" (click)="planos()">
+        <ion-icon class="icon-footer-next-step" name="calculator"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="message_row" *ngIf="isVideo">
+    <ion-col text-center>
+      <button *ngIf="isVideo" ion-button clear class="btn-footer-next-step" (click)="video()">
+        <ion-icon class="icon-footer-next-step" name="videocam"></ion-icon>
+      </button>
+    </ion-col>
   </ion-row>
 </ion-toolbar>
 </ion-footer>
