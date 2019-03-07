@@ -49,19 +49,15 @@
               text-center 
               type="password"
               placeholder="Digite sua senha de 6 dígitos" 
-              [(ngModel)]="message.text"
-              
-            >
+              [(ngModel)]="message.text">
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isToken">
             <ion-input
-              autofocus
               text-center
               type="number"
               placeholder="Token" 
-              [(ngModel)]="message.text"
-            >
+              [(ngModel)]="message.text">
             </ion-input>
           </ion-item>
           <ion-item no-lines *ngIf="isCPF">
@@ -94,7 +90,7 @@
               autofocus
               text-center 
               placeholder="R$"
-              type=text 
+              type=tel
               [(ngModel)]="message.text"
               [brmasker]="{money: true, thousand: ',',  decimalCaracter: '.', decimal: '3'}"
             >

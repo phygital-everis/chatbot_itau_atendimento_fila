@@ -44,13 +44,14 @@ export class NicknamePage {
 
   firstMessage() {    
     this.watson.sendMsg(this.pergunta).subscribe((data) => {
-      this.resposta = data.output.generic[0].text
-      this.saveResposta()
-    })
+      this.resposta = data.output.generic[0].text;
+      this.saveResposta();
+    });
   }
 
   confirmNickname(){
     this.savePergunta()
+    this.nickname = this.nickname.trim();
     this.navCtrl.push(ChatScrollPage, { nickname: this.nickname })
   }
 
