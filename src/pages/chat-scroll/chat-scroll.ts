@@ -132,7 +132,6 @@ export class ChatScrollPage {
         this.saveMessages()
       }
     })
-    this.scrollDown()
   }
 //envia a mensagem 'oi' para iniciar a conversa
   firstMessage() {
@@ -209,7 +208,9 @@ export class ChatScrollPage {
     let msg = new MessageScroll()
     msg.from = this.message.from
     msg.text = this.message.text
+    console.log(msg.text);
     this.messages.push(msg)
+
     this.localStorage.addItem('messages', this.messages)
     this.message.text = ""
     this.message.from = ""
@@ -241,6 +242,7 @@ export class ChatScrollPage {
       this.isDoc = false
       this.isEnd = false
       this.isVideo = true
+
     }
     if (this.passoAtual == 8) {
       this.isPlan = false
@@ -294,9 +296,7 @@ export class ChatScrollPage {
     modal.present();
   }
 
-  scrollDown() {    
-    setInterval(()=>{
-      this.content.scrollToBottom()
-    },500)
+  scrollDown() { 
+    this.content.scrollToBottom()
   }
 }

@@ -161,7 +161,11 @@ page-address {
         .input-wrapper{
             height: 15px;
             .cep{
-                height: 20px;
+                height: 25px;
+            }
+            .numero-complemento {
+                height: 23px;
+                //margin-top: 30px;
             }
         }
 

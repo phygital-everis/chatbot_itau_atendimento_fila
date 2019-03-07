@@ -30,7 +30,7 @@ export class PlanosPage {
   }
 
   confirmPacote(){
-    this.navCtrl.push(ChatScrollPage, { pergunta: 'plano_selecionado',passo:5})
+    this.navCtrl.push(ChatScrollPage, { pergunta: 'Plano selecionado!',passo:5})
   }
 
   goToCustomPlane(){
