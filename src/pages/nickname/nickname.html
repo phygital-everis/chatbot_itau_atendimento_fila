@@ -68,7 +68,7 @@
   </ion-grid>
 </ion-content>
 
-<ion-footer [ngClass]="nickname ? '' : 'hide-footer'">
+<ion-footer (click)="confirmNickname()" [ngClass]="nickname ? '' : 'hide-footer'">
   <ion-toolbar>
     <ion-row>
     <ion-col text-center>

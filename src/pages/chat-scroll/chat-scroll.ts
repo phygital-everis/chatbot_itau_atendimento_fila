@@ -251,7 +251,7 @@ export class ChatScrollPage {
       this.isVideo = false
       setTimeout(() => {
         this.home();
-      }, 3000);
+      }, 5000);
     }
     this.passoAtual++
     if (this.passoAtual > this.passos.length) {
@@ -277,7 +277,7 @@ export class ChatScrollPage {
   }
 
   home() {
-    this.navCtrl.push(HomePage)
+    this.navCtrl.setRoot(HomePage)
   }
 
   video() {

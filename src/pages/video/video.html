@@ -70,7 +70,7 @@
 
 </ion-content>
 
-<ion-footer [ngClass]="goOn? '' : 'hide-footer'">
+<ion-footer (click)="confirmVideo()" [ngClass]="goOn? '' : 'hide-footer'">
   <ion-toolbar>
     <ion-row>
       <ion-col text-center>
