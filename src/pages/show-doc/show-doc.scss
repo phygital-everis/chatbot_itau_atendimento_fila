@@ -1,15 +1,19 @@
 page-show-doc {
  
      .header {
-         background-color: #EEEEEE !important;
-                    padding-top: 24px;
-                    padding-bottom: 24px;
+        background-color: #EEEEEE !important;
+        padding-top: 24px;
+        padding-bottom: 24px;
         .toolbar{
             .toolbar-background{
-                    background-color: #EEEEEE !important;
+                background-color: #EEEEEE !important;
                    
                 }
         }
+    }
+
+    ion-title {
+        color: #EC7001;
     }
 
     .title {

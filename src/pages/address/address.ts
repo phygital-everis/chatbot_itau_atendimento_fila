@@ -56,9 +56,10 @@ export class AddressPage {
   }
 
   confirmAddress(){
-    this.endereco.numero = String(this.input).split(',')[0].trim();
-    this.endereco.complemento = String(this.input).split(',')[1].trim();
-    console.log('endereco_confirmado', this.endereco);    
-    this.navCtrl.push(ChatScrollPage, { pergunta: 'endereco_confirmado', passo: 7});
+    if (String(this.input).indexOf(',') > 0) {
+      this.endereco.numero = String(this.input).split(',')[0].trim();
+      this.endereco.complemento = String(this.input).split(',')[1].trim();
+    }
+    this.navCtrl.push(ChatScrollPage, { pergunta: 'Endereço enviado!', passo: 7});
   }
 }

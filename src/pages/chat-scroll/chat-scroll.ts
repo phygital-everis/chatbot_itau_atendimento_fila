@@ -249,7 +249,9 @@ export class ChatScrollPage {
       this.isDoc = false
       this.isEnd = false
       this.isVideo = false
-      this.home()
+      setTimeout(() => {
+        this.home();
+      }, 3000);
     }
     this.passoAtual++
     if (this.passoAtual > this.passos.length) {

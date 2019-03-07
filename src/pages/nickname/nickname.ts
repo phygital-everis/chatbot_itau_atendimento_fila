@@ -19,8 +19,8 @@ export class NicknamePage {
       "session_id": "", 
         "message" : "oi"
     }
-  public perguntas = new Array()
-  public respostas = new Array()  
+  public perguntas = new Array();
+  public respostas = new Array();
   
   constructor(
     public navCtrl: NavController, 
