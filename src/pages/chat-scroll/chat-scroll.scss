@@ -44,6 +44,15 @@ page-chat-scroll {
     .content{
         background-color: #EEEEEE !important;
     }
+    .item {
+        background-color: transparent;
+    }
+    ion-label {
+        white-space: unset;
+        &.label-md {
+            margin: 0;
+        }
+    }
     .message {
         padding: 10px !important;
         transition: all 250ms ease-in-out !important;
