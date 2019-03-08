@@ -1,5 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
-import { NavController, NavParams, ToastController, ModalController, Content } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NavController, NavParams, ToastController, ModalController, Content, List } from 'ionic-angular';
 import { WatsonapiProvider } from "../../providers/watsonapi/watsonapi";
 import { LocalStorageProvider } from "../../providers/local-storage/local-storage";
 import { TakePicturePage } from "../take-picture/take-picture";
@@ -17,12 +17,14 @@ import { MessageScroll } from "../../models/message.model";
 })
 export class ChatScrollPage {
   @ViewChild(Content) content: Content
+  @ViewChild(List, {read: ElementRef}) chatList: ElementRef
 
   public nickname: string
   public botName: string = "Itaú"
   public messages = new Array<MessageScroll>()
   public message: MessageScroll = new MessageScroll()
   private token
+  private mutationObserver: MutationObserver
   public next: boolean = false
   isPass: boolean = false
   isToken: boolean = false
@@ -300,5 +302,16 @@ export class ChatScrollPage {
 
   scrollDown() { 
     this.content.scrollToBottom()
+  }
+  ionViewDidLoad(){
+            
+    this.mutationObserver = new MutationObserver((mutations) => {
+      this.content.scrollToBottom();
+    });
+    
+    this.mutationObserver.observe(this.chatList.nativeElement, {
+      childList: true
+    });
+    
   }
 }
