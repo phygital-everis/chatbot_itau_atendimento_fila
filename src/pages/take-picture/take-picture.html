@@ -38,11 +38,11 @@
 
 </ion-content>
 
-<ion-footer (click)="getPhoto('picture')" *ngIf="!photo || tipoDoc == '' ">
+<ion-footer (click)="getPhoto()" *ngIf="!photo || tipoDoc == '' ">
   <ion-toolbar>
     <ion-row>
       <ion-col>
-        <button ion-button clear full color="primary" icon-left (click)="getPhoto()" [disabled]='!tipoDoc'>
+        <button ion-button clear full color="primary" icon-left [disabled]='!tipoDoc'>
           <ion-icon name='camera'></ion-icon>
           Tirar foto
         </button>
