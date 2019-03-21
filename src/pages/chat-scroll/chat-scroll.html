@@ -1,7 +1,7 @@
 <ion-header no-border>
   <ion-navbar>
     <ion-title>
-      <img src="assets/imgs/itau-logo.png" width="40px" alt="itau logo">
+      <img src="assets/imgs/santander-logo-red.png" width="40px" alt="logo">
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -13,7 +13,7 @@
         <ion-col col-9 *ngIf="message.from !== nickname">
           <ion-row>
             <ion-col col-3 >
-              <img class="rounded-img" src="assets/imgs/chatbot.jpg" alt="itau logo">
+              <img class="rounded-img" src="assets/imgs/chatbot.jpg" alt="logo">
             </ion-col>
             <ion-col col-9 class="message" [ngClass]="{'my_message': message.from === nickname, 'other_message': message.from !== nickname}">
               <span class="user_name">{{ message.from }}</span><br>
@@ -29,7 +29,7 @@
             <span>{{ message.text }}</span>
           </ion-col>
           <ion-col col-3>
-            <img class="rounded-img" src="assets/imgs/client.jpg" alt="itau logo">
+            <img class="rounded-img" src="assets/imgs/client.jpg" alt="logo">
           </ion-col>
         </ion-row>
       </ion-col>

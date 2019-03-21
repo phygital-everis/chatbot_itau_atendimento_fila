@@ -37,7 +37,7 @@ page-custom-plane {
     }
 
     .back-button{
-        color: #EC7001;
+        color: #E00303;
         margin-left: 10px;
         margin-bottom: 5px;
     }
@@ -76,23 +76,23 @@ page-custom-plane {
     .rounded-img{
         border-radius: 50%;
         width:50px;
-        border:1px solid #EC7001;
+        border:1px solid #E00303;
     }
     .rounded-img2{
         border-radius: 50%;
         width:50px;
-        border:1px solid #EC7001;
+        border:1px solid #E00303;
     }
 
     .name{
-        color:#EC7001;
+        color:#E00303;
         font-weight: bold;
         font-size: 16px;
         margin-top: 0;
         margin-bottom: -1rem;
     }
      .name2{
-        color:#EC7001;
+        color:#E00303;
         font-size: 14px;
         margin: 0 auto;
         word-wrap: break-word;
@@ -105,7 +105,7 @@ page-custom-plane {
         margin-bottom: -1rem;
     }
     .text{
-        color:#EC7001;
+        color:#E00303;
         font-size: 16px;
         margin-top: 0px;
     }
@@ -140,7 +140,7 @@ page-custom-plane {
 
    h4{
        font-size: 16px;
-       color: #EC7001;
+       color: #E00303;
        text-transform: uppercase;
        padding-left: 10px;
    }
@@ -156,7 +156,7 @@ page-custom-plane {
         border-radius: 50%;
         background-color: white;
         box-shadow: 0 2px 2px #888888;
-        color: #EC7001;
+        color: #E00303;
 
         &.increase{
             float: right;
@@ -171,11 +171,11 @@ page-custom-plane {
    }
 
     .footer {
-        background-color: #EC7001 !important;
+        background-color: #E00303 !important;
         color: #ffffff;        
         .toolbar{
             .toolbar-background{
-                background-color: #EC7001 !important;
+                background-color: #E00303 !important;
                 color: #ffffff; 
             }
         }
@@ -206,7 +206,7 @@ page-custom-plane {
     .toggle.toggle-checked .toggle-inner {
         -webkit-transform: translate3d(50px, 0, 0);
         transform: translate3d(100%, 0, 0);
-        background-color: #EC7001;
+        background-color: #E00303;
     }
 
     .toggle.toggle-checked .toggle-icon {

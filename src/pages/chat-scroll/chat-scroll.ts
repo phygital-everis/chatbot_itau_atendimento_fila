@@ -20,7 +20,7 @@ export class ChatScrollPage {
   @ViewChild(List, {read: ElementRef}) chatList: ElementRef
 
   public nickname: string
-  public botName: string = "Itaú"
+  public botName: string = "Santander"
   public messages = new Array<MessageScroll>()
   public message: MessageScroll = new MessageScroll()
   private token
