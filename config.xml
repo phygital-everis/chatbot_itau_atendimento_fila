@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.everis" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Abertura de conta - Itaú</name>
+    <name>Abertura de conta - Chatbot</name>
     <description>App para abertura de conta PF.</description>
     <author email="csaitoso@everis.com" href="http://everis.com/">Stark everis Team</author>
     <content src="index.html" />
