@@ -4,35 +4,14 @@ import { IonicApp, IonicErrorHandler, IonicModule, IonicPageModule } from 'ionic
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpClientModule } from '@angular/common/http';
-import { SMS } from '@ionic-native/sms';
-import { Sim } from '@ionic-native/sim';
 import { BrMaskerModule } from 'brmasker-ionic-3';
 import { IonicStorageModule } from '@ionic/storage';
 import { SocketIoModule, SocketIoConfig } from 'ng-socket-io';
-import { Camera } from '@ionic-native/camera';
-import { MediaCapture} from '@ionic-native/media-capture';
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ChatPage } from '../pages/chat/chat';
-import { NicknamePage} from '../pages/nickname/nickname';
-import { TakePicturePage } from '../pages/take-picture/take-picture';
-import { ShowDocPage } from "../pages/show-doc/show-doc";
-import { SendSmsPage } from "../pages/send-sms/send-sms";
-import { PlanosPage } from '../pages/planos/planos';
-import { CustomPlanePage } from '../pages/custom-plane/custom-plane';
-import { AddressPage } from "../pages/address/address";
-import { ModalHistoryPage } from "../pages/modal-history/modal-history";
-import { VideoPage } from "../pages/video/video";
-import { ChatScrollPage } from "../pages/chat-scroll/chat-scroll";
-
-import { VisionProvider } from '../providers/vision/vision';
 import { LocalStorageProvider } from '../providers/local-storage/local-storage';
-import { HttpEvaProvider } from '../providers/http-eva/http-eva';
-import { SendSmsProvider } from '../providers/send-sms/send-sms';
 import { WatsonapiProvider } from '../providers/watsonapi/watsonapi';
-import { BuscaCepProvider } from '../providers/busca-cep/busca-cep';
-import { HttpGenericProvider } from '../providers/http-generic/http-generic';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
 
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
@@ -40,18 +19,7 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    TakePicturePage,
-    ChatPage,
-    NicknamePage,
-    ShowDocPage,
-    SendSmsPage,
-    PlanosPage,
-    CustomPlanePage,
-    AddressPage,
-    ModalHistoryPage,
-    VideoPage,
-    ChatScrollPage
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -73,34 +41,15 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    TakePicturePage,
-    ChatPage,
-    NicknamePage,
-    ShowDocPage,
-    SendSmsPage,
-    PlanosPage,
-    CustomPlanePage,
-    AddressPage,
-    ModalHistoryPage,
-    VideoPage,
-    ChatScrollPage
+    HomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    VisionProvider,
-    Camera,
     LocalStorageProvider,
-    HttpEvaProvider,
-    SMS,
-    Sim,
-    SendSmsProvider,
     WatsonapiProvider,
-    BuscaCepProvider,
-    HttpGenericProvider,
-    MediaCapture
+    TextToSpeech
   ]
 })
 export class AppModule {}

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.everis" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Abertura de conta - Chatbot</name>
-    <description>App para abertura de conta PF.</description>
+    <name>Atendimento de fila - Chatbot</name>
+    <description>App para atendimento de fila</description>
     <author email="csaitoso@everis.com" href="http://everis.com/">Stark everis Team</author>
     <content src="index.html" />
     <access origin="*" />
@@ -88,5 +88,6 @@
     <plugin name="cordova-plugin-android-permissions" spec="1.0.0" />
     <plugin name="cordova-plugin-sim" spec="1.3.3" />
     <plugin name="cordova-plugin-media-capture" spec="3.0.2" />
+    <plugin name="cordova-plugin-tts" spec="0.2.3" />
     <engine name="android" spec="7.1.4" />
 </widget>
